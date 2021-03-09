@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+// Layouts
+import Home from './views/Home';
+import Store from './views/Store';
+import Reforest from './views/Reforest';
+import Fundacion from './views/Fundacion';
+
+// Components
+import Navigation from './layouts/home/Navigation'
+
+export default class App extends Component {
+  render() {
+    return <div className="container mx-auto">
+      <Router>
+
+        <Navigation />
+
+        <Route exact path="/" component={Home} />
+        <Route path="/fundacion" component={Fundacion} />
+        <Route path="/tienda" component={Store} />
+        <Route path="/yoplanto" component={Reforest} />
+
+      </Router>
     </div>
-  );
+  }
 }
-
-export default App;
