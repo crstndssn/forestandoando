@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+
 import Product from '../../components/store/Product'
+import AddProduct from '../../components/store/AddProduct'
 
 export default class mainProducts extends Component {
     render() {
@@ -9,7 +11,7 @@ export default class mainProducts extends Component {
                 <Product />
                 <Product />
                 <Product />
-                <Product />
+                <AddProduct />
             </div>
         )
     }
