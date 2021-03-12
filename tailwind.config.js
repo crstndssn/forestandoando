@@ -6,6 +6,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
+      xs: '320px',
       sm: '640px',
       md: '768px',
       lg: '1024px',
@@ -18,6 +19,7 @@ module.exports = {
 
       organic: '#FAF8F2',
       nature: '#458055',
+      ando: '#7FA25B',
       leave: '#F8FBF9',
 
 

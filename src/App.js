@@ -5,11 +5,11 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 // Layouts
 import Home from './views/Home';
 import Store from './views/Store';
-import Reforest from './views/Reforest';
-import Fundacion from './views/Fundacion';
+import Blog from './views/Blog';
 
 // Components
-import Navigation from './layouts/home/Navigation'
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
 
 export default class App extends Component {
   render() {
@@ -19,9 +19,10 @@ export default class App extends Component {
         <Navigation />
 
         <Route exact path="/" component={Home} />
-        <Route path="/fundacion" component={Fundacion} />
         <Route path="/tienda" component={Store} />
-        <Route path="/yoplanto" component={Reforest} />
+        <Route path="/blog" component={Blog} />
+
+        <Footer />
 
       </Router>
     </div>
