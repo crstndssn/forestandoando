@@ -53,7 +53,7 @@ export default class Home extends Component {
                         <h1 className="text-gray-900 font-sans font-bold md:text-5xl xs:text-4xl tracking-tight">Reforesta tu espacio.</h1>
                         <p className="text-gray-900 md:text-2xl xs:text-xl my-1">Siembra lo que mas te guste en el lugar que quieras,<br />
                                 mejora el mundo y aprende de la naturaleza.</p>
-                        <Link to="/tienda" className="border-2 border-nature text-nature font-bold py-2 md:px-4 xs:px-3 rounded-xl md:text-2xl xs:text-xl my-2">Yo planto</Link>
+                        {/* <Link to="/tienda" className="border-2 border-nature text-nature font-bold py-2 md:px-4 xs:px-3 rounded-xl md:text-2xl xs:text-xl my-2">Yo planto</Link> */}
                     </div>
                     <div className="md:w-1/2 xs:w-full flex justify-center items-center py-6">
                         <img src={HomeUno} alt="uno" className="Forestando Ando" />
@@ -67,7 +67,7 @@ export default class Home extends Component {
                     <div className="md:w-1/2 xs:w-full  flex justify-end md:items-start xs:items-end md:text-left xs:text-right flex-col md:ml-10 xs:ml-0 my-10">
                         <h1 className="text-gray-900 font-sans font-bold md:text-5xl xs:text-4xl tracking-tight">Transforma tu entorno.</h1>
                         <p className="text-gray-900 md:text-2xl xs:text-xl my-1">Ten una mejor calidad de vida rodeado de naturaleza no importa como sea tu espacio.</p>
-                        <Link to="/tienda" className="border-2 border-nature text-nature font-bold py-2 md:px-4 xs:px-3 rounded-xl md:text-2xl xs:text-xl my-2">Yo planto</Link>
+                        {/* <Link to="/tienda" className="border-2 border-nature text-nature font-bold py-2 md:px-4 xs:px-3 rounded-xl md:text-2xl xs:text-xl my-2">Yo planto</Link> */}
                     </div>
                 </div>
 
@@ -75,7 +75,7 @@ export default class Home extends Component {
                     <div className="md:w-1/2 xs:w-full  flex justify-end items-start flex-col md:ml-10 xs:ml-0">
                         <h1 className="text-gray-900 font-sans font-bold md:text-5xl xs:text-4xl tracking-tight">Envios Nacionales.</h1>
                         <p className="text-gray-900 md:text-2xl xs:text-xl my-1">¡La mejor experiencia de compra sin moverte de casa! Compra en línea y recibe tu pedido en casa o en el destino que elijas.</p>
-                        <Link to="/tienda" className="border-2 border-nature text-nature font-bold py-2 md:px-4 xs:px-3 rounded-xl md:text-2xl xs:text-xl my-2">Yo planto</Link>
+                        {/* <Link to="/tienda" className="border-2 border-nature text-nature font-bold py-2 md:px-4 xs:px-3 rounded-xl md:text-2xl xs:text-xl my-2">Yo planto</Link> */}
                     </div>
                     <div className="md:w-1/2 xs:w-full  flex justify-center items-center py-6">
                         <img src={HomeTres} alt="uno" className="w-full" />
