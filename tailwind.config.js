@@ -17,6 +17,8 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
 
+      soft: '#D5E2D7',
+      brand: '#36723E',
       organic: '#FAF8F2',
       nature: '#458055',
       ando: '#7FA25B',
@@ -171,7 +173,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
-        'Comfortaa'
+        'DM Sans'
       ],
       serif: ['DM Sans'],
       mono: [

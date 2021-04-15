@@ -6,12 +6,12 @@ import AddProduct from '../components/AddProduct'
 export default class mainProducts extends Component {
     render() {
         return (
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid md:grid-cols-3 gap-3">
                 <Product />
                 <Product />
                 <Product />
                 <Product />
-                <AddProduct />
+                <AddProduct className="h-36" />
             </div>
         )
     }

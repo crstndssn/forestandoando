@@ -22,8 +22,8 @@ export default class Home extends Component {
                     <div className="md:w-2/5 xs:w-full flex justify-end md:items-start xs:items-center flex-col">
                         <h1 className="text-nature font-sans font-bold md:text-7xl xs:text-5xl tracking-tight leading-none">Forestando</h1>
                         <h1 className="text-ando font-sans font-bold text-7xl xs:text-5xl tracking-tight leading">Ando</h1>
-                        <p className="text-gray-900 md:text-2xl xs:text-xl my-1 md:text-left xs:text-center">Siembra en cualquier lugar.<br/> Aprende de la naturaleza<br/>y cambia el mundo</p>
-                        <Link to="/tienda" className="border-2 border-nature text-nature font-bold py-2 md:px-4 xs:px-3 rounded-xl md:text-2xl xs:text-xl my-2">Yo planto</Link>
+                        <p className="text-gray-900 md:text-2xl xs:text-xl my-1 md:text-left xs:text-center">Siembra vida<br/> Aprende de la naturaleza<br/>y cambia el mundo</p>
+                        {/* <Link to="/tienda" className="border-2 border-nature text-nature font-bold py-2 md:px-4 xs:px-3 rounded-xl md:text-2xl xs:text-xl my-2">Yo planto</Link> */}
                     </div>
                     <div className="md:w-3/5 xs:w-full flex justify-center items-center py-6">
                         <img src={HomeIllustration} alt="uno" className="" />
@@ -85,11 +85,11 @@ export default class Home extends Component {
 
                 <div className="mt-24 flex justify-center items-center flex-col">
                     <p className="md:text-3xl xs:text-2xl font-bold text-center">Siguenos en nuestras redes sociales <br />y aprende como contribuir con esta misión</p>
-                    <div className="flex justify-center items-center my-10">
+                    {/* <div className="flex justify-center items-center my-10">
                         <img src={instagram} alt="instagram" className="w-10 mx-4" />
                         <img src={facebook} alt="facebook" className="w-10 mx-4" />
                         <img src={whatsapp} alt="whatsapp" className="w-11 mx-4" />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         )

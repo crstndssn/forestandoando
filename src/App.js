@@ -5,7 +5,10 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 // Layouts
 import Home from './views/Home';
 import Store from './views/Store';
-import Blog from './views/Blog';
+import Admin from './views/Admin';
+import Login from './views/Login';
+import Product from './views/Product';
+import AddProduct from './views/AddProduct';
 
 // Components
 import Navigation from './components/Navigation';
@@ -13,18 +16,24 @@ import Footer from './components/Footer';
 
 export default class App extends Component {
   render() {
-    return <div className="container mx-auto">
-      <Router>
+    return <div className="bg-organic h-full">
+      <div className="container mx-auto">
+        <Router>
 
-        <Navigation />
+          <Navigation />
 
-        <Route exact path="/" component={Home} />
-        <Route path="/tienda" component={Store} />
-        <Route path="/blog" component={Blog} />
+          <Route exact path="/" component={Home} />
 
-        <Footer />
+          <Route path="/tienda" component={Store} />
+          <Route path="/login" component={Login} />
+          <Route path="/product" component={Product} />
+          <Route path="/add-product" component={AddProduct} />
 
-      </Router>
+          <Footer />
+
+        </Router>
+      </div>
+
     </div>
   }
 }
