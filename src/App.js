@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-
 // Layouts
 import Home from './views/Home';
 import Store from './views/Store';
@@ -9,6 +8,7 @@ import Admin from './views/Admin';
 import Login from './views/Login';
 import Product from './views/Product';
 import AddProduct from './views/AddProduct';
+import Cart from './views/Cart';
 
 // Components
 import Navigation from './components/Navigation';
@@ -16,7 +16,7 @@ import Footer from './components/Footer';
 
 export default class App extends Component {
   render() {
-    return <div className="bg-organic h-full">
+    return <div className="bg-organic min-h-screen">
       <div className="container mx-auto">
         <Router>
 
@@ -28,6 +28,7 @@ export default class App extends Component {
           <Route path="/login" component={Login} />
           <Route path="/product" component={Product} />
           <Route path="/add-product" component={AddProduct} />
+          <Route path="/cart" component={Cart} />
 
           <Footer />
 

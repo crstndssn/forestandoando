@@ -17,7 +17,8 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
 
-      soft: '#D5E2D7',
+      eco: 'rgba(54, 114, 62, 0.13)',
+      soft: '#E8EDE9',
       brand: '#36723E',
       organic: '#FAF8F2',
       nature: '#458055',

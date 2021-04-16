@@ -17,8 +17,7 @@ export default class Product extends Component {
                         </div>
                         <div>
                             <button className="text-white bg-nature p-3 rounded font-serif font-medium text-xl leading-none mt-2">
-                                $10.000
-                                    </button>
+                                $10.000</button>
                         </div>
                     </div>
                 </div>

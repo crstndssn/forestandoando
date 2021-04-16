@@ -22,7 +22,7 @@ const Product = () => {
                     <p className="md:text-xl xs:text-lg my-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
 
-                <div className="w-full flex justify-around mt-3 bg-soft rounded-md py-4">
+                <div className="w-full flex justify-around mt-3 bg-brand bg-opacity-10 rounded-md py-4">
                     <div className="flex justify-center items-center flex-col">
                         <img className="xs:w-12 md:w-16 mb-2" src={sun} alt="figure" />
                         <p className="text-brand md:text-xl xs:text-lg">Poca</p>
@@ -42,7 +42,6 @@ const Product = () => {
                 </div>
 
             </div>
-
 
         </div>
     )
