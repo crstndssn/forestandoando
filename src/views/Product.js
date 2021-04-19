@@ -1,4 +1,5 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 import planta from '../resources/planta.jpg'
 import sun from '../resources/sun.svg'

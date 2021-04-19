@@ -22,7 +22,7 @@ export default class Navigation extends Component {
                         <Link to="/blog" className="text-lg font-bold tracking-tight md:mx-7 xs:mx-2">Blog</Link> */}
                     </div>
                     <div className="md:w-1/3 xs:w-auto flex justify-end items-center">
-                        <a href="" target="_blank" rel="noreferrer"><img className="md:w-10 xs:w-10" src={cart} alt="cart" /></a>
+                        <Link to="/cart"><img className="md:w-10 xs:w-10" src={cart} alt="cart" /></Link>
                     </div>
                 </div>
             </div>

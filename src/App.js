@@ -21,10 +21,10 @@ export default class App extends Component {
         <Router>
 
           <Navigation />
+          
+          <Route  path="/home" component={Home} />
 
-          <Route exact path="/" component={Home} />
-
-          <Route path="/tienda" component={Store} />
+          <Route exact path="/" component={Store} />
           <Route path="/login" component={Login} />
           <Route path="/product" component={Product} />
           <Route path="/add-product" component={AddProduct} />
