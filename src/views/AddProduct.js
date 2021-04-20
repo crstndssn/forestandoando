@@ -122,12 +122,12 @@ const AddProduct = () => {
 
     return (
         <div className="container mx-auto flex justify-center items-center flex-col mt-10">
+
             <div className="w-full flex justify-center">
                 <h1 className="xs:text-3xl md:text-5xl font-medium text-brand">Añadir producto</h1>
             </div>
 
             <form onSubmit={setProduct} className="flex justify-center items-center flex-col mt-8">
-
 
                 <div className="md:w-1/2 xs:w-full">
                     <div className="w-full xs:h-60 md:h-80">
@@ -151,7 +151,7 @@ const AddProduct = () => {
                         <input
                             onChange={(e) => { uploadFile(e) }}
                             name="upload-image"
-                            className="w-full bg-organic text-gray-900 py-2 md:text-6xl xs:text-3xl font-medium my-1 mt-2 focus:outline-none"
+                            className="bg-organic text-gray-900 py-2 md:text-xl xs:text-3xl font-medium my-1 mt-2 focus:outline-none"
                             type="file" />
 
                         <input

@@ -20,10 +20,10 @@ module.exports = {
       eco: 'rgba(72, 131, 80, 0.05)',
       soft: '#E8EDE9',
       brand: '#36723E',
-      organic: '#F4F4F0',
+      organic: '#FFFFFA',
       nature: '#458055',
       ando: '#7FA25B',
-      leave: '#F8FBF9',
+      leave: '#FBFAF3',
 
 
       black: colors.black,
@@ -460,7 +460,10 @@ module.exports = {
     minHeight: {
       0: '0px',
       full: '100%',
+      10: '10vh',
       20: '20vh',
+      30: '30vh',
+      40: '40vh',
       50: '50vh',
       60: '60vh',
       70: '70vh',
@@ -715,6 +718,9 @@ module.exports = {
     }),
     zIndex: {
       auto: 'auto',
+      '-30': '-30',
+      '-20': '-20',
+      '-10': '-10',
       0: '0',
       10: '10',
       20: '20',

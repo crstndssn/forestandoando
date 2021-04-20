@@ -36,11 +36,11 @@ const Login = () => {
     }
 
     return (
-        <div className="min-h-60 flex justify-center items-center">
+        <div className="min-h-70 flex justify-center items-center">
             <div className="flex justify-center items-center">
                 <div className="container mx-auto flex justify-center items-center flex-col">
-                    <div className="lg:w-2/3 md:w-2/3 xs:w-full">
-                        <h3 className="text-brand font-medium text-6xl mt-2 mb-4">Log In</h3>
+                    <div className="lg:w-2/3 md:w-2/3 xs:w-full flex justify-center items-center flex-col">
+                        <h3 className="text-brand font-medium text-4xl mt-2 mb-4"><span className="text-nature">#forestando</span><span className="text-ando">ando</span></h3>
                         <form id="form-login" onSubmit={handleSubmit}>
                             <input
                                 name="email"
@@ -54,9 +54,9 @@ const Login = () => {
                                 className="shadow bg-soft text-xl p-4 my-2 w-full rounded-2xl focus:outline-none"
                                 placeholder="Contraseña" />
                             <button type="submit"
-                                className="hover:shadow transition duration-300 w-full border-2 bg-brand hover:bg-transparent border-brand text-white hover:text-brand my-2 p-3 rounded-2xl md:text-2xl xs:text-xl focus:outline-none">Log In</button>
+                                className="hover:shadow transition duration-300 w-full border-2 bg-brand hover:bg-transparent border-brand text-white hover:text-brand my-2 p-3 rounded-2xl md:text-2xl xs:text-xl focus:outline-none">Ingresar</button>
                         </form>
-                        <Link to="/vsp/reset" id="forget-password" class="transition duration-300 hover:underline font-xl flex justify-center w-full my-5 text-gray-500">
+                        <Link to="/reset" id="forget-password" class="transition duration-300 hover:underline font-xl flex justify-center w-full my-5 text-gray-500">
                             ¿Olvidaste tu contraseña?
                         </Link>
                     </div>

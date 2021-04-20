@@ -28,8 +28,8 @@ const Products = () => {
             {
                 postUser.length !== 0 ? (
                     postUser.map(item => (
-                        <Link to={`/${item.id}`} key={item.id} className="flex">
-                            <div className="flex justify-between items-center flex-col shadow rounded bg-leave">
+                        <Link to={`/product/${item.id}`} key={item.id} className="flex">
+                            <div className="flex justify-between items-center flex-col shadow hover:shadow-lg transition duration-100 rounded-xl bg-leave">
                                 <div>
                                     <img className="rounded-t " src={item.imagen} alt="figure" />
                                 </div>

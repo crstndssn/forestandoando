@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class Footer extends Component {
     render() {
         return (
-            <div className="w-full flex justify-between items-center md:flex-row pt-24 xs:flex-col md:pb-24 xs:pb-12">
+            <div className="min-h-10vh w-full flex justify-between items-center md:flex-row xs:flex-col">
                 <div className="flex justify-center items-center md:flex-row xs:flex-col ">
                     <p className="text-gray-300 text-lg my-2">Terminos y Condiciones</p>
                     <p className="text-gray-300 text-lg mx-10">Reporta un error</p>
