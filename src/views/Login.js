@@ -17,7 +17,7 @@ const Login = () => {
             .signInWithEmailAndPassword(email.value, password.value)
             .then(result => {
                 console.log(result);
-                history.push(`/add-product`);
+                history.push(`/`);
             })
             .catch(error => {
 
@@ -46,15 +46,15 @@ const Login = () => {
                                 name="email"
                                 type="email"
                                 id="login-email"
-                                className="shadow bg-soft text-xl p-4 my-2 w-full rounded-2xl focus:outline-none"
+                                className="text-brand shadow bg-soft text-xl p-4 my-2 w-full rounded-2xl focus:outline-none"
                                 placeholder="Email"
                                 autocomplete="off"
                             />
                             <input name="password" type="password" id="login-password"
-                                className="shadow bg-soft text-xl p-4 my-2 w-full rounded-2xl focus:outline-none"
+                                className="text-brand shadow bg-soft text-xl p-4 my-2 w-full rounded-2xl focus:outline-none"
                                 placeholder="Contraseña" />
                             <button type="submit"
-                                className="hover:shadow transition duration-300 w-full border-2 bg-brand hover:bg-transparent border-brand text-white hover:text-brand my-2 p-3 rounded-2xl md:text-2xl xs:text-xl focus:outline-none">Ingresar</button>
+                                className="hover:shadow transition duration-300 w-full border-2 text-bra bg-brand hover:bg-transparent border-brand text-white hover:text-brand my-2 p-3 rounded-2xl md:text-2xl xs:text-xl focus:outline-none">Ingresar</button>
                         </form>
                         <Link to="/reset" id="forget-password" class="transition duration-300 hover:underline font-xl flex justify-center w-full my-5 text-gray-500">
                             ¿Olvidaste tu contraseña?

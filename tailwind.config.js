@@ -24,7 +24,7 @@ module.exports = {
       nature: '#458055',
       ando: '#7FA25B',
       leave: '#FBFAF3',
-
+      
 
       black: colors.black,
       white: colors.white,
@@ -36,6 +36,7 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
+
     },
     spacing: {
       px: '1px',

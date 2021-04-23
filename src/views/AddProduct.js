@@ -87,9 +87,6 @@ const AddProduct = () => {
 
     const uploadFile = (e) => {
 
-        console.log(e + ' neerror')
-        debugger
-
         let file = e.target.files[0];
         let bucketName = 'products'
         let refStorage = storage.ref(`${bucketName}/${file.name}`)

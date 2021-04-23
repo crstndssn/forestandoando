@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
 const Home = () => {
     return (
         <div className="w-full flex justify-center items-center min-h-80">
@@ -10,7 +11,7 @@ const Home = () => {
                 <div className="mt-7">
                     <Link to="/login" className="mt-3 p-3 border-2 border-brand bg-brand text-white rounded-xl text-2xl font-medium">Yo planto</Link>
                 </div>
-                
+
             </div>
         </div>
     )

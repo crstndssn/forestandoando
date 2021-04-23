@@ -6,6 +6,7 @@ import Store from './views/Store';
 import Admin from './views/Admin';
 import Login from './views/Login';
 import Product from './views/Product';
+import Edit from './layouts/EditProduct';
 import AddProduct from './views/AddProduct';
 import Cart from './views/Cart';
 import Stock from './views/Stock';
@@ -20,8 +21,8 @@ import Footer from './components/Footer';
 export default class App extends Component {
   render() {
     return <div className="bg-organic min-h-screen">
-      <img className="absolute top-0 -z-10" src={backgroundImg} alt="background" />
-      <div className="container mx-auto">
+      <div className="absolute w-full min-h-90" style={{ backgroundImage: `url(${backgroundImg})`, zIndex:-1 }}></div>
+      <div className="container mx-auto z-10">
         <Router>
 
           <Navigation />
@@ -36,6 +37,10 @@ export default class App extends Component {
 
             <Route path="/product/:id">
               <Product />
+            </Route>
+
+            <Route path="/edit/:id">
+              <Edit />
             </Route>
 
             <Route path="/cart" component={Cart} />
@@ -65,7 +70,6 @@ export default class App extends Component {
 
 
       </div>
-
     </div>
   }
 }
