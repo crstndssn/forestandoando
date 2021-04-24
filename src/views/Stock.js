@@ -36,7 +36,7 @@ const Stock = () => {
     }
 
     return (
-        <div className="grid md:grid-cols-2 gap-3 mt-8">
+        <div className="container mx-auto grid md:grid-cols-2 gap-3 mt-8">
 
             {
                 postUser.length !== 0 ? (

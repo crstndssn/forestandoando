@@ -7,7 +7,7 @@ import menos from '../resources/menos.svg'
 
 const Cart = () => {
     return (
-        <div className="mt-6 flex justify-center items-center text-gray-800">
+        <div className="container mx-auto mt-6 flex justify-center items-center text-gray-800">
             <div className="xs:w-full md:w-2/3 flex justify-between items-center shadow rounded bg-leave my-2">
                 <div className="xs:w-1/4 md:w-60">
                     <img className="rounded" src={product} />

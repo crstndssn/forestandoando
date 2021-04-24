@@ -11,10 +11,8 @@ export default class Store extends Component {
     render() {
         return (
             <div>
-                <div className="mt-6">
-                    <Home />
-                </div>
-                <div className="mt-6">
+                <Home />
+                <div className="bg-brand py-10">
                     <Categorias />
                 </div>
                 <div className="mt-6">

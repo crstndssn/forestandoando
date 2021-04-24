@@ -14,6 +14,7 @@ import Provedores from './views/Provedores';
 
 import backgroundImg from './resources/background-fa.png'
 
+
 // Components
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
@@ -21,8 +22,8 @@ import Footer from './components/Footer';
 export default class App extends Component {
   render() {
     return <div className="bg-organic min-h-screen">
-      <div className="absolute w-full min-h-90" style={{ backgroundImage: `url(${backgroundImg})`, zIndex:-1 }}></div>
-      <div className="container mx-auto z-10">
+
+      <div className="w-full z-10">
         <Router>
 
           <Navigation />

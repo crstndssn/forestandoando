@@ -47,7 +47,7 @@ const Product = () => {
 
 
     return (
-        <div className="flex justify-center items-center md:flex-row xs:flex-col mt-8 text-gray-800">
+        <div className="container mx-auto flex justify-center items-center md:flex-row xs:flex-col mt-8 text-gray-800">
 
             <div className="md:w-1/2 xs:w-full md:p-10 xs:p-0">
                 <img className="rounded-xl" src={product.imagen} alt="figure" />

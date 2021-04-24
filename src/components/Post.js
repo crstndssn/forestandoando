@@ -6,7 +6,7 @@ export default class Post extends Component {
     render() {
         return (
             <div>
-                <div className="flex">
+                <div className="container mx-auto flex">
                     <div className="shadow rounded-xl">
                         <div className="p-3 flex justify-between items-center flex-col">
                             <div className ="max-w-sm w-full lg:max-w-full lg:flex">

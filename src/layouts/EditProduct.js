@@ -169,7 +169,7 @@ const Product = () => {
     }
 
     return (
-        <form onSubmit={setUpdate} className="flex justify-center items-center md:flex-row xs:flex-col mt-8 text-gray-800">
+        <form onSubmit={setUpdate} className=" container mx-auto flex justify-center items-center md:flex-row xs:flex-col mt-8 text-gray-800">
 
             <div className="md:w-1/2 xs:w-full md:p-10 xs:p-0">
                 <div className="w-full xs:h-60 md:h-80">

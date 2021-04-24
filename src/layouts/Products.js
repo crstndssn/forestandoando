@@ -23,8 +23,8 @@ const Products = () => {
     }, [])
 
     return (
-        <div className="grid md:grid-cols-3 gap-3">
-
+        <div className="container mx-auto grid md:grid-cols-3 gap-3">
+            
             {
                 postUser.length !== 0 ? (
                     postUser.map(item => (

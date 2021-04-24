@@ -39,42 +39,40 @@ const Navigation = () => {
     }
 
     return (
-        <div>
-            <div className="flex justify-between items-center pt-8">
-                <div className="w-1/3">
-                    <Link to="/"><img className="md:w-16 xs:w-12" src={logoDesktop} alt="Logo" /> </Link>
-                </div>
-                <div className="w-1/3 flex justify-center items-center">
-                    {/* <Link to="/" className="text-lg font-bold tracking-tight mx-7 md:block xs:hidden">Inicio</Link>
-                <Link to="/tienda" className="text-lg font-bold tracking-tight md:mx-7 xs:mx-2">Tienda</Link>
-                <Link to="/blog" className="text-lg font-bold tracking-tight md:mx-7 xs:mx-2">Blog</Link> */}
-                </div>
-                <div className="xs:w-3/4 md:w-1/4 flex justify-end items-center">
-                    {
-                        admin ? (
-                            <div className="md:w-1/4 xs:w-auto flex justify-end items-center">
-                                <Link to="/admin"><img className="md:w-8 xs:w-7" src={config} alt="admin" /></Link>
-                            </div>
-                        ) : (
-                            <span></span>
-                        )
-                    }
+        <div className="container mx-auto relative z-10 flex justify-between items-center pt-8">
+            <div className="w-1/3 cursor-pointer">
+                <Link to="/"><img className="md:w-16 xs:w-12" src={logoDesktop} alt="Logo" /> </Link>
+            </div>
+            <div className="w-1/3 flex justify-center items-center">
+                {/* <Link to="/" className="text-lg font-bold tracking-tight mx-7 md:block xs:hidden">Inicio</Link>
+        <Link to="/tienda" className="text-lg font-bold tracking-tight md:mx-7 xs:mx-2">Tienda</Link>
+        <Link to="/blog" className="text-lg font-bold tracking-tight md:mx-7 xs:mx-2">Blog</Link> */}
+            </div>
+            <div className="xs:w-3/4 md:w-1/4 flex justify-end items-center">
+                {
+                    admin ? (
+                        <div className="md:w-1/4 xs:w-auto flex justify-end items-center">
+                            <Link to="/admin"><img className="md:w-9 xs:w-8" src={config} alt="admin" /></Link>
+                        </div>
+                    ) : (
+                        <span></span>
+                    )
+                }
 
-                    <div className="md:w-1/3 xs:w-auto flex justify-end items-center">
-                        <Link to="/cart"><img className="md:w-8 xs:w-7" src={cart} alt="cart" /></Link>
-                    </div>
-                    {
-                        !user ? (
-                            <div className="md:w-1/3 xs:w-auto flex justify-end items-center">
-                                <Link to="/login"><img className="md:w-8 xs:w-7" src={porfile} alt="home" /></Link>
-                            </div>
-                        ) : (
-                            <div onClick={logOut} className="md:w-1/3 xs:w-auto flex justify-end items-center cursor-pointer">
-                                <img className="md:w-8 xs:w-7" src={logout  } alt="home" />
-                            </div>
-                        )
-                    }
-                </div>
+                {/* <div className="md:w-1/3 xs:w-auto flex justify-end items-center">
+                    <Link to="/cart"><img className="md:w-8 xs:w-7" src={cart} alt="cart" /></Link>
+                </div> */}
+                {
+                    !user ? (
+                        <div className="md:w-1/3 xs:w-auto flex justify-end items-center">
+                            <Link to="/login"><img className="md:w-9 xs:w-8" src={porfile} alt="home" /></Link>
+                        </div>
+                    ) : (
+                        <div onClick={logOut} className="md:w-1/3 xs:w-auto flex justify-end items-center cursor-pointer">
+                            <img className="md:w-9 xs:w-8" src={logout} alt="home" />
+                        </div>
+                    )
+                }
             </div>
         </div>
     )

@@ -5,7 +5,7 @@ import planta from '../resources/planta.jpg'
 export default class Product extends Component {
     render() {
         return (
-            <div className="flex">
+            <div className="container mx-auto flex">
                 <div className="flex justify-between items-center flex-col shadow rounded bg-leave">
                     <div>
                         <img className="rounded-t " src={planta} alt="figure" />
