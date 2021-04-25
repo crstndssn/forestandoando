@@ -12,7 +12,7 @@ export default class Store extends Component {
         return (
             <div>
                 <Home />
-                <div className="bg-brand py-10">
+                <div className="bg-brand md:min-h-90 xs:min-h-full md:py-0 xs:py-20 flex justify-center items-center">
                     <Categorias />
                 </div>
                 <div className="mt-6">

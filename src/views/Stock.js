@@ -42,18 +42,20 @@ const Stock = () => {
                 postUser.length !== 0 ? (
                     postUser.map(item => (
                         <div to={`/product/${item.id}`} key={item.id} className="flex">
-                            <div className="flex justify-between items-center shadow hover:shadow-md transition duration-100 rounded-xl bg-leave">
-                                <div className="w-1/4">
-                                    <img className="rounded-xl m-2" src={item.imagen} alt="figure" />
+                            <div className="flex justify-between items-center md:flex-row xs:flex-col shadow rounded-xl bg-leave">
+                                <div className="md:w-1/2 xs:w-full rounded-xl flex justify-center items-center">
+                                    <img className="rounded-xl m-2 overflow-hidden" src={item.imagen} alt="figure" />
                                 </div>
-                                <div className="flex justify-center flex-col items-start">
-                                    <h2 className="font-serif font-medium text-3xl leading-none">{item.nombre}</h2>
-                                    <p className="text-gray-400 font-serif font-normal text-xl leading-none my-1">{item.uso}</p>
-                                </div>
-                                <div className="flex justify-center items-center gap-3 mr-6">
-                                    <Link to={`/product/${item.id}`}><img src={eye} className="w-12 shadow hover:shadow-lg transition duration-100 rounded-full cursor-pointer" alt="edit" /></Link>
-                                    <Link to={`/edit/${item.id}`}><img src={edit} className="w-12 shadow hover:shadow-lg transition duration-100 rounded-full cursor-pointer" alt="edit" /></Link>
-                                    <img onClick={(id) => { deletePoduct(item.id) }} src={del} className="w-12 shadow hover:shadow-lg transition duration-100 rounded-full cursor-pointer"  alt="delete" />
+                                <div className="md:w-1/2 xs:w-full md:px-7 xs:px-4 h-full flex justify-around md:items-start flex-col">
+                                    <div className="flex justify-center flex-col items-start md:mt-0 xs:mt-2">
+                                        <h2 className="font-serif font-medium text-3xl leading-none">{item.nombre}</h2>
+                                        <p className="text-gray-400 font-serif font-normal text-xl leading-none my-1">Cantidad</p>
+                                    </div>
+                                    <div className="flex justify-center items-center gap-3 xs:my-6 md:my-0">
+                                        <Link to={`/product/${item.id}`}><img src={eye} className="w-12 shadow hover:shadow-lg transition duration-100 rounded-full cursor-pointer" alt="edit" /></Link>
+                                        <Link to={`/edit/${item.id}`}><img src={edit} className="w-12 shadow hover:shadow-lg transition duration-100 rounded-full cursor-pointer" alt="edit" /></Link>
+                                        <img onClick={(id) => { deletePoduct(item.id) }} src={del} className="w-12 shadow hover:shadow-lg transition duration-100 rounded-full cursor-pointer" alt="delete" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
