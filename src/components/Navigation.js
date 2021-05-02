@@ -23,11 +23,17 @@ const Navigation = () => {
         auth.onAuthStateChanged((user) => {
             if (user) {
                 setUsuario(true)
-                console.log(user.email)
+                
+                if (user.email == 'dussan29@gmail.com') {
+                    setAdmin(true)
+                } else {
+                    setAdmin(false)
+
+                }
+            } else {
+                setUsuario(false)
             }
-            if (user.email === 'forestandoando@gmail.com' || 'dussan29@gmail.com' || 'oceanforsky1@gmail.com') {
-                setAdmin(true)
-            }
+
         })
     })
 
@@ -47,31 +53,34 @@ const Navigation = () => {
         <Link to="/tienda" className="text-lg font-bold tracking-tight md:mx-7 xs:mx-2">Tienda</Link>
         <Link to="/blog" className="text-lg font-bold tracking-tight md:mx-7 xs:mx-2">Blog</Link> */}
             </div>
-            <div className="xs:w-1/3 md:w-1/6 flex justify-between items-center">
+            <div className="xs:w-2/3 md:w-1/5 flex justify-between items-center">
+
                 {
-                    admin ? (
+                    admin == true ? (
                         <div className="md:w-1/4 xs:w-auto flex justify-end items-center">
-                            <Link to="/admin"><img className="md:w-9 xs:w-8" src={config} alt="admin" /></Link>
+                            <Link to="/admin"><img className="md:w-8 xs:w-8" src={config} alt="admin" /></Link>
                         </div>
                     ) : (
                         <span></span>
                     )
                 }
 
-                {/* <div className="md:w-1/3 xs:w-auto flex justify-end items-center">
+                <div className="md:w-1/3 xs:w-auto flex justify-end items-center">
                     <Link to="/cart"><img className="md:w-8 xs:w-7" src={cart} alt="cart" /></Link>
-                </div> */}
+                </div>
+
                 {
                     !user ? (
                         <div className="md:w-1/3 xs:w-auto flex justify-end items-center">
-                            <Link to="/login"><img className="md:w-9 xs:w-8" src={porfile} alt="home" /></Link>
+                            <Link to="/login"><img className="md:w-8 xs:w-8" src={porfile} alt="home" /></Link>
                         </div>
                     ) : (
                         <div onClick={logOut} className="md:w-1/3 xs:w-auto flex justify-end items-center cursor-pointer">
-                            <img className="md:w-9 xs:w-8" src={logout} alt="home" />
+                            <img className="md:w-8 xs:w-8" src={logout} alt="home" />
                         </div>
                     )
                 }
+
             </div>
         </div>
     )

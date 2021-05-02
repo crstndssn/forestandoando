@@ -40,7 +40,7 @@ const Products = () => {
                                     </div>
                                     <div>
                                         <button className="text-white bg-nature p-3 rounded font-serif font-medium text-xl leading-none mt-2">
-                                            {item.precio}</button>
+                                            ${item.precio}</button>
                                     </div>
                                 </div>
                             </div>

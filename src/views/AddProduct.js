@@ -7,6 +7,8 @@ import water from '../resources/water.svg'
 import wheater from '../resources/wheater.svg'
 import share from '../resources/share.svg'
 
+import Category from '../components/Category'
+
 const AddProduct = () => {
 
     const [imagen, setImagen] = useState('');
@@ -18,6 +20,9 @@ const AddProduct = () => {
     const [agua, setAgua] = useState('');
     const [temperatura, setTemperatura] = useState('');
     const [precio, setPrecio] = useState('');
+    const [cantidadTotal, setCantidadTotal] = useState(0);
+
+    const [loadImg, setLoadImg] = useState('');
 
     const [error, setError] = useState('');
     const [notification, setNotification] = useState('');
@@ -64,6 +69,7 @@ const AddProduct = () => {
             luz: luz,
             agua: agua,
             temperatura: temperatura,
+            cantidadTotal: cantidadTotal,
             precio: precio
         }
 
@@ -73,7 +79,6 @@ const AddProduct = () => {
             console.log(e)
         }
 
-        setImagen('')
         setNombre('')
         setNombreCientifico('')
         setDescripcion('')
@@ -81,6 +86,7 @@ const AddProduct = () => {
         setLuz('')
         setAgua('')
         setTemperatura('')
+        setCantidadTotal('')
         setPrecio('')
 
     }
@@ -96,7 +102,7 @@ const AddProduct = () => {
             'state_changed',
             snapshot => {
                 const porcentaje = snapshot.bytesTransferred / snapshot.totalBytes * 100;
-                console.log(porcentaje)
+                setLoadImg(porcentaje)
             },
             err => {
                 console.log(err)
@@ -124,32 +130,44 @@ const AddProduct = () => {
                 <h1 className="xs:text-3xl md:text-5xl font-medium text-brand">Añadir producto</h1>
             </div>
 
-            <form onSubmit={setProduct} className="flex justify-center items-center flex-col mt-8">
+            <form onSubmit={setProduct} className="flex justify-center items-center mt-8">
 
-                <div className="md:w-1/2 xs:w-full">
-                    <div className="w-full xs:h-60 md:h-80">
-                        {
-                            imagen == '' ? (
-                                <div className="bg-gray-100 shadow min-h-full rounded-lg flex justify-center items-center">
-                                    <p className="font-medium text-2xl text-gray-400">+ Subir imagen</p>
-                                </div>)
-                                :
-                                (<div>
-                                    <img className="w-full" src={imagen} alt="producto-preview" />
-                                </div>
-                                )
-                        }
-                    </div>
+                <div className="md:w-1/2 xs:w-full md:p-10 xs:p-0">
+                    {
+                        imagen == '' ? (
+                            <div>
+                                <input
+                                    onChange={(e) => { uploadFile(e) }}
+                                    name="upload-image"
+                                    className="bg-organic text-gray-900 py-2 md:text-xl xs:text-3xl font-medium my-1 mt-2 focus:outline-none"
+                                    type="file" />
+
+                            </div>
+
+                        )
+                            :
+                            (<div>
+                                <img className="w-full" src={imagen} alt="producto-preview" />
+                                <input
+                                    onChange={(e) => { uploadFile(e) }}
+                                    name="upload-image"
+                                    className="bg-organic text-gray-900 py-2 md:text-xl xs:text-3xl font-medium my-1 mt-2 focus:outline-none"
+                                    type="file" />
+                            </div>
+                            )
+                    }
+                    {
+                        loadImg <= 100 ? (
+                            <p className="text-brand">cargando {Math.round(loadImg)}%</p>
+                        ) : (
+                            <span></span>
+                        )
+                    }
                 </div>
-
 
                 <div className="md:w-1/2 xs:w-full">
                     <div className="mt-4 w-full ">
-                        <input
-                            onChange={(e) => { uploadFile(e) }}
-                            name="upload-image"
-                            className="bg-organic text-gray-900 py-2 md:text-xl xs:text-3xl font-medium my-1 mt-2 focus:outline-none"
-                            type="file" />
+
 
                         <input
                             value={nombre}
@@ -201,12 +219,33 @@ const AddProduct = () => {
                         </div>
 
                         <div className="flex justify-center items-center flex-col">
-                            <img className="xs:w-7 md:w-9 mb-2" src={wheater} alt="wheater" />
-                            <input value={temperatura} onChange={(e) => { setTemperatura(e.target.value) }} className="w-full bg-transparent py-2 rounded text-brand md:text-xl xs:text-lg text-center placeholder-brand focus:outline-none" placeholder="Temp" />
+                            <img 
+                                className="xs:w-7 md:w-9 mb-2" 
+                                src={wheater} 
+                                alt="wheater" 
+                            />
+                            <input 
+                                value={temperatura} 
+                                onChange={(e) => { setTemperatura(e.target.value) }} 
+                                className="w-full bg-transparent py-2 rounded text-brand md:text-xl xs:text-lg text-center placeholder-brand focus:outline-none" 
+                                placeholder="Temperatura" />
                         </div>
 
-                    </div>
 
+
+                    </div>
+                    <div>
+                        <Category />
+                    </div>
+                    <div>
+                        <input
+                            value={cantidadTotal}
+                            onChange={(e) => { setCantidadTotal(e.target.value) }}
+                            className="w-full shadow my-3 bg-transparent py-2 rounded text-brand md:text-xl xs:text-lg text-center placeholder-brand focus:outline-none"
+                            placeholder="cantidad"
+                            type="number"
+                        />
+                    </div>
                     <div className="w-full flex justify-center items-center text-center gap-2 mt-5">
 
                         <div className="w-full text-xl rounded-lg text-center">
@@ -216,9 +255,7 @@ const AddProduct = () => {
                     </div>
 
                     <div class="flex justify-center items-center w-full mt-10">
-
                         <button action="submit" class="md:w-1/3 xs:w-1/2 bg-brand text-white text-semibold my-4 p-3 rounded-2xl md:text-2xl xs:text-2xl focus:outline-none">Publicar</button>
-
                     </div>
 
                 </div>

@@ -89,7 +89,7 @@ const Login = () => {
 
     return (
         <div>
-            <div className="container mx-auto min-h-70 flex justify-center items-center">
+            <div className="container mx-auto flex justify-center items-center md:mt-24 xs:mt-20">
                 <div className="flex justify-center items-center">
                     <div className="container mx-auto flex justify-center items-center flex-col">
                         <div className="lg:w-2/3 md:w-2/3 xs:w-full flex justify-center items-center flex-col">

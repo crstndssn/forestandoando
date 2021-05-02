@@ -9,9 +9,8 @@ import img3 from '../resources/planta-mobile.png'
 const Home = () => {
     return (
         <div className="relative w-full flex justify-center items-center">
-
-            <div className="md:flex xs:hidden bottom-0 absolute w-full justify-between items-end min-h-90">
-                <img src={img1} className="max-h-screen" alt="orquídeas" />
+            <div className="md:flex xs:hidden bottom-0 right-0 absolute w-full justify-between items-end min-h-90">
+                <img src={img1} className="max-h-screen" alt="interior" />
                 <img src={img2} className="max-h-screen" alt="interior" />
             </div>
             <div className="md:hidden xs:flex bottom-0 absolute flex w-full justify-between items-end">
