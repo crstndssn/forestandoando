@@ -12,7 +12,7 @@ import Cart from './views/Cart';
 import Stock from './views/Stock';
 import Provedores from './views/Provedores';
 
-import backgroundImg from './resources/background-fa.png'
+import whatsapp from './resources/whatsapp.svg'
 
 
 // Components
@@ -22,7 +22,9 @@ import Footer from './components/Footer';
 export default class App extends Component {
   render() {
     return <div className="bg-organic min-h-screen">
-
+      <a href="https://wa.link/447it8" target="_blank">
+        <img src={whatsapp} className="md:w-16 xs:w-12 md:bottom-10 md:right-10 xs:bottom-5 xs:right-5 fixed z-10" alt="whatsapp"/>
+      </a>
       <div className="w-full z-10">
         <Router>
 

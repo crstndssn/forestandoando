@@ -19,7 +19,7 @@ const Home = () => {
             
             <div className="container mx-auto relative md:w-2/4 xs:w-3/4 min-h-90 flex md:justify-center xs:justify-start xs:top-32 md:top-0 items-center flex-col text-center">
                 <h1 className="md:text-8xl xs:text-4xl font-medium"><span className="text-nature">forestando</span><span className="text-ando">ando</span></h1>
-                <p className="text-brand md:text-3xl xs:text-xl">Siembra vida, aprende de la naturaleza.</p>
+                <p className="text-brand md:text-3xl xs:text-xl">Siembra vida y aprende de la naturaleza.</p>
                 <div className="mt-7">
                     <Link to="/login" className="hover:shadow transition duration-300 w-full border-2 bg-brand hover:bg-transparent border-brand text-white hover:text-brand my-2 p-3 rounded-2xl md:text-2xl xs:text-xl focus:outline-none">Yo planto</Link>
                 </div>
