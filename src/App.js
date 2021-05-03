@@ -10,6 +10,7 @@ import Edit from './layouts/EditProduct';
 import AddProduct from './views/AddProduct';
 import Cart from './views/Cart';
 import Stock from './views/Stock';
+import Reset from './views/Reset';
 import Provedores from './views/Provedores';
 
 import whatsapp from './resources/whatsapp.svg'
@@ -47,6 +48,7 @@ export default class App extends Component {
             </Route>
 
             <Route path="/cart" component={Cart} />
+            <Route path="/reset" component={Reset} />
 
             <Route path="/login" component={Login} />
 
