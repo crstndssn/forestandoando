@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { store } from '../firebase'
+import { store } from '../../firebase'
 
-import planta from '../resources/planta.jpg'
-import sun from '../resources/sun.svg'
-import water from '../resources/water.svg'
-import wheater from '../resources/wheater.svg'
-import share from '../resources/share.svg'
+import planta from '../../resources/planta.jpg'
+import sun from '../../resources/sun.svg'
+import water from '../../resources/water.svg'
+import wheater from '../../resources/wheater.svg'
+import share from '../../resources/share.svg'
 
 const Product = () => {
 
@@ -89,9 +89,9 @@ const Product = () => {
                     </div>
                 </div>
 
-                <div className="w-full flex justify-center items-center text-center gap-2 mt-5">
-                    <button className="w-full bg-brand text-white p-3 text-xl rounded-lg">${product.precio}</button>
-                </div>
+                {/* <div className="w-full flex justify-center items-center text-center gap-2 mt-5">
+                    <button className="w-full bg-brand text-white p-3 text-xl rounded-lg">save</button>
+                </div> */}
 
             </div>
 

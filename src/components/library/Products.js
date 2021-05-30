@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { store } from '../firebase'
+import { store } from '../../firebase'
 import { Link } from 'react-router-dom'
 
-import Product from '../components/Product'
-import AddProduct from '../components/AddProduct'
 
 const Products = () => {
 
@@ -23,25 +21,24 @@ const Products = () => {
     }, [])
 
     return (
-        <div className="container mx-auto grid md:grid-cols-3 gap-3 md:mt-20 xs:mt-10">
-            
+        <div className="container mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-3 md:mt-10 xs:mt-10">
             {
                 postUser.length !== 0 ? (
                     postUser.map(item => (
                         <Link to={`/product/${item.id}`} key={item.id} className="flex">
-                            <div className="flex justify-between items-center flex-col shadow hover:shadow-lg transition duration-100 rounded-xl bg-leave">
+                            <div className="flex justify-between items-center flex-col shadow hover:shadow-lg transition duration-100 rounded-xl bg-white  ">
                                 <div>
-                                    <img className="rounded-t " src={item.imagen} alt="figure" />
+                                    <img className="rounded-t" src={item.imagen} alt="figure" />
                                 </div>
                                 <div className="w-full p-3 flex justify-between items-start">
                                     <div>
                                         <h2 className="font-serif font-medium text-3xl leading-none">{item.nombre}</h2>
                                         <p className="text-gray-400 font-serif font-normal text-xl leading-none my-1">{item.uso}</p>
                                     </div>
-                                    <div>
+                                    {/* <div>
                                         <button className="text-white bg-nature p-3 rounded font-serif font-medium text-xl leading-none mt-2">
-                                            ${item.precio}</button>
-                                    </div>
+                                            save</button>
+                                    </div> */}
                                 </div>
                             </div>
                         </Link>
@@ -50,7 +47,7 @@ const Products = () => {
                     :
                     (
                         <div>
-                            <p>No hay</p>
+                            <p>cargando</p>
                         </div>
                     )
             }

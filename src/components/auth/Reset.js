@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
-import { auth } from '../firebase';
+import { auth } from '../../firebase';
 
 const ResetPassword = (e) => {
 
@@ -23,7 +23,7 @@ const ResetPassword = (e) => {
     return (
         <div className="container mx-auto flex justify-center items-center md:min-h-50 xs:min-h-auto md:mt-24 xs:mt-20">
             <div className="container mx-auto flex justify-center items-center flex-col md:w-2/4 xs:w-full text-center">
-                <h3 className="text-brand font-medium text-4xl mt-2 mb-4">Te enviaremos un link para que actualices tu contraseña</h3>
+                <h3 className="text-brand font-medium md:text-3xl xs:text-2xl mt-2 mb-4 md:w-2/3 xs:w-full">Te enviaremos un link para que actualices tu contraseña</h3>
                 <form onSubmit={resetEmail}>
                     <input
                         onChange={(e) => { setEmailReset(e.target.value) }}

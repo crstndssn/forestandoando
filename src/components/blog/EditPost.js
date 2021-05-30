@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Provedores = () => {
+const EditPost = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Provedores = () => {
     )
 }
 
-export default Provedores
+export default EditPost

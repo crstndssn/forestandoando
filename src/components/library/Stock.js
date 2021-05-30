@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { store } from '../firebase'
+import { store } from '../../firebase'
 import { Link } from 'react-router-dom'
 
-import eye from '../resources/view-product.svg'
-import edit from '../resources/edit-product.svg'
-import del from '../resources/delete-product.svg'
+import eye from '../../resources/view-product.svg'
+import edit from '../../resources/edit-product.svg'
+import del from '../../resources/delete-product.svg'
 
 const Stock = () => {
     const [postUser, setPostUser] = useState('')
@@ -64,7 +64,7 @@ const Stock = () => {
                     :
                     (
                         <div>
-                            <p>No hay</p>
+                            <p>cargando</p>
                         </div>
                     )
             }

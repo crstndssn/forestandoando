@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
-import { auth, store, storage } from '../firebase'
+import { auth, store, storage } from '../../firebase'
 
-import planta from '../resources/planta.jpg'
-import sun from '../resources/sun.svg'
-import water from '../resources/water.svg'
-import wheater from '../resources/wheater.svg'
-import share from '../resources/share.svg'
+import planta from '../../resources/planta.jpg'
+import sun from '../../resources/sun.svg'
+import water from '../../resources/water.svg'
+import wheater from '../../resources/wheater.svg'
+import share from '../../resources/share.svg'
 
-import Category from '../components/Category'
+
 
 const AddProduct = () => {
 
@@ -193,6 +193,7 @@ const AddProduct = () => {
                             className="w-full bg-leave mt-6 min-h-30 shadow rounded-lg p-4 md:text-xl xs:text-lg my-1 text-gray-800 h-32 focus:outline-none"
                             placeholder="Description">
                         </textarea>
+                        
                     </div>
 
                     <div className="w-full flex justify-around mt-3 bg-brand bg-opacity-10 rounded-md py-4">
@@ -235,7 +236,7 @@ const AddProduct = () => {
 
                     </div>
                     <div>
-                        <Category />
+                        {/* <Category /> */}
                     </div>
                     <div>
                         <input

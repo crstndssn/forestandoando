@@ -1,78 +1,88 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-// Layouts
-import Store from './views/Store';
-import Admin from './views/Admin';
-import Login from './views/Login';
-import Product from './views/Product';
-import Edit from './layouts/EditProduct';
-import AddProduct from './views/AddProduct';
-import Cart from './views/Cart';
-import Stock from './views/Stock';
-import Reset from './views/Reset';
-import Provedores from './views/Provedores';
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
+
+import Login from './components/auth/Login';
+import Signup from './components/auth/Signup';
+import Reset from './components/auth/Reset';
+
+import Admin from './components/admin/Admin'
+
+import Home from './views/Home';
+
+import Post from './components/blog/Post';
+import AddPost from './components/blog/AddPost';
+import EditPost from './components/blog/EditPost';
+import Blog from './components/blog/Blog';
+
+
+import Product from './components/library/Product';
+import AddProduct from './components/library/AddProduct';
+import EditProduct from './components/library/EditProduct';
+import Stock from './components/library/Stock';
+import Biblioteca from './components/library/Library';
+
+import Pay from './components/pricing/Pay'
+import Premium from './components/pricing/Premium';
+import Foundation from './components/foundation/Foundation';
+
+import Legal from './components/home/Terms';
+import Questions from './components/home/Questions';
+
 
 import whatsapp from './resources/whatsapp.svg'
 
 
-// Components
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
 
 export default class App extends Component {
   render() {
     return <div className="bg-organic min-h-screen">
-      <a href="https://wa.link/447it8" target="_blank">
-        <img src={whatsapp} className="md:w-16 xs:w-12 md:bottom-10 md:right-10 xs:bottom-5 xs:right-5 fixed z-10" alt="whatsapp"/>
-      </a>
+
       <div className="w-full z-10">
+
         <Router>
 
           <Navigation />
-
-          {/* <Route path="/home" component={Home} /> */}
 
           <Switch>
 
             {/* ROUTES USER */}
 
-            <Route exact path="/" component={Store} />
+            <Route exact path="/" component={Home} />
 
-            <Route path="/product/:id">
-              <Product />
-            </Route>
-
-            <Route path="/edit/:id">
-              <Edit />
-            </Route>
-
-            <Route path="/cart" component={Cart} />
-            <Route path="/reset" component={Reset} />
-
+            {/* auth */}
             <Route path="/login" component={Login} />
+            <Route path="/reset" component={Reset} />
+            <Route path="/signup" component={Signup} />
+            
+            {/* admin */}
+            <Route path="/settings" component={Admin} />
+            <Route path="/add-post" component={AddPost} />
+            <Route path="/add-product" component={AddProduct} />
 
+            {/* library */}
+            <Route path="/product/:id" component={Product}/>
+            <Route path="/edit-product/:id" component={EditProduct}/>
+            <Route path="/biblioteca" component={Biblioteca} />
+            <Route path="/stock" component={Stock} />
 
-            {/* <Route path="/stock" component={Stock} /> */}
+            {/* blog */}
+            <Route path="/post/:id" component={Post}/>
+            <Route path="/edit-post/:id" component={EditPost}/>
+            <Route path="/blog" component={Blog} />
 
+            {/* pay */}
+            <Route path="/pagos" component={Pay} />
 
-            {/* ROUTES ADMIN */}
-
-
-
+            <Route path="/legal" component={Legal} />
 
           </Switch>
-
-          <Route path="/admin" component={Admin} />
-          <Route path="/stock" component={Stock} />
-          <Route path="/provedores" component={Provedores} />
-          <Route path="/add-product" component={AddProduct} />
-
 
           <Footer />
 
         </Router>
-
 
       </div>
     </div>

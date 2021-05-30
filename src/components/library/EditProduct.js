@@ -1,15 +1,15 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import { useParams, useHistory, Link } from 'react-router-dom'
-import { store, storage } from '../firebase'
+import { store, storage } from '../../firebase'
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 
 
-import planta from '../resources/planta.jpg'
-import sun from '../resources/sun.svg'
-import water from '../resources/water.svg'
-import wheater from '../resources/wheater.svg'
-import share from '../resources/share.svg'
+import planta from '../../resources/planta.jpg'
+import sun from '../../resources/sun.svg'
+import water from '../../resources/water.svg'
+import wheater from '../../resources/wheater.svg'
+import share from '../../resources/share.svg'
 
 const categorias = [
     { id: 1, name: 'Flores', unavailable: false },
