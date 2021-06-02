@@ -28,15 +28,15 @@ const Post = () => {
 
     return (
         <div className="w-full container mx-auto flex justify-center items-center flex-col">
-            <div className="w-2/3 mt-10">
-                <h1 className="md:text-6xl xs:text-lg my-2 font-medium">{post.name}</h1>
+            <div className="md:w-2/3 xd:w-full mt-10">
+                <h1 className="md:text-6xl xs:text-4xl my-2 font-medium">{post.name}</h1>
                 <div className="md:text-xl xs:text-lg my-2">
-                    <p className="text-gray-600">por <span className="text-gray-800 font-medium">{post.autor}</span></p> 
+                    <p className="text-gray-600 text-lg">por <span className="text-gray-800 font-medium">{post.autor}</span></p> 
                 </div>
-                <p className="md:text-2xl xs:text-lg my-2">{post.description}</p>
+                <p className="md:text-2xl xs:text-xl my-2">{post.description}</p>
                 <img src={post.imagen} alt="imagen" className="mt-5 rounded-xl" />
-                <div className="my-">
-                    <p>{post.content}</p>
+                <div className="my-5">
+                    <p className="md:text-2xl xs:text-xl">{post.content}</p>
                 </div>
             </div>
         </div>

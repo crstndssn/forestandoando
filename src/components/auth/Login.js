@@ -100,19 +100,19 @@ const Login = () => {
                                     type="email"
                                     id="login-email"
                                     className="text-brand shadow bg-soft text-xl p-4 my-2 w-full rounded-2xl focus:outline-none"
-                                    placeholder="Email"
+                                    placeholder="email"
                                     autocomplete="off"
                                 />
                                 <input name="password" type="password" id="login-password"
                                     className="text-brand shadow bg-soft text-xl p-4 my-2 w-full rounded-2xl focus:outline-none"
-                                    placeholder="Contraseña" />
+                                    placeholder="contraseña" />
                                 <button type="submit"
                                     className="hover:shadow transition duration-300 w-full border-2 bg-brand hover:bg-transparent border-brand text-white hover:text-brand my-2 p-3 rounded-2xl md:text-2xl xs:text-xl focus:outline-none">Ingresar</button>
                             </form>
 
                         </div>
                         <div className="lg:w-2/3 md:w-2/3 xs:w-full flex justify-center items-center flex-col">
-                            <button onClick={loginGoogle} className="bg-white w-full flex justify-center items-center font-serif text-2xl border shadow hover:shadow-lg transition duration-100 rounded-xl p-3 my-5 mb-3 focus:outline-none">
+                            <button onClick={loginGoogle} className="bg-white w-full flex justify-center items-center font-serif text-2xl border border-gray-200 shadow hover:shadow-lg transition duration-100 rounded-xl p-3 my-5 mb-3 focus:outline-none">
                                 <img className="w-6 mx-2" src={google} alt="google" />Google</button>
                         </div>
                         <p className="transition duration-300 font-xl flex justify-center w-full my-5 text-gray-500">No tienes una cuenta?  <Link className="underline ml-2" to="/signup">Regístrate</Link></p>

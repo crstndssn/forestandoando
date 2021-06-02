@@ -19,9 +19,6 @@ const Blog = () => {
 
     return (
         <>
-            <div className="w-full container mx-auto flex justify-center items-center flex-col mt-5">
-                <h1 className="md:text-5xl xs:text-4xl font-semibold text-brand">Blog</h1>
-            </div>
             <div className="container mx-auto grid lg:grid-cols-3 md:grid-cols-2 gap-3 md:my-7 xs:my-10">
                 {
                     postUser.length !== 0 ? (
@@ -42,7 +39,6 @@ const Blog = () => {
                                         </div> */}
                                         </div>
                                     </div>
-
                                 </div>
                             </Link>
                         ))

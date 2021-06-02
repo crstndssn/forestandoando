@@ -13,6 +13,7 @@ const Signup = () => {
     const [id, setId] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [username, setUsername] = useState('');
 
     const loginGoogle = async e => {
         e.preventDefault();
@@ -42,13 +43,16 @@ const Signup = () => {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        const { email, password } = e.target.elementsM
 
         await app.auth()
-            .signInWithEmailAndPassword(email.value, password.value)
+            .createUserWithEmailAndPassword(email, password)
             .then(result => {
-                console.log(result);
-                history.push(`/`)
+                console.log(result.user.uid)
+                setId(result.user.uid)
+                console.log(id)
+                setEmail(result.user.email)
+                createUser(result.user.uid, result.user.email)
+                history.push('/')
             })
             .catch(error => {
                 console.log(error)
@@ -70,9 +74,7 @@ const Signup = () => {
         const user = {
             id: id,
             email: email,
-            name: 'Tu nombre',
-            description: 'Una breve descripcion',
-            link: 'Un link para ver mas'
+            username: username,
         }
 
         try {
@@ -92,27 +94,27 @@ const Signup = () => {
                 <div className="flex justify-center items-center">
                     <div className="container mx-auto flex justify-center items-center flex-col">
                         <div className="md:w-1/2 xs:w-full flex justify-center items-center flex-col">
-                        <h3 className="text-brand font-medium text-4xl mt-2 mb-4"><span className="text-nature">#forestando</span><span className="text-ando">ando</span></h3>
+                        <h3 className="text-brand font-medium text-4xl mt-2 mb-4"><span className="text-nature">Regístrate</span><span className="text-ando">ando</span></h3>
                             <form id="form-login" onSubmit={handleSubmit}>
                                 <input
-                                    name="email"
+                                    onChange={(e) => {setUsername(e.target.value) }}
                                     type="text"
-                                    id="login-email"
                                     className="text-brand shadow bg-soft text-xl p-4 my-2 w-full rounded-2xl focus:outline-none"
-                                    placeholder="Usuario"
+                                    placeholder="username"
                                     autocomplete="off"
                                 />
                                 <input
-                                    name="email"
+                                    onChange={(e) => {setEmail(e.target.value)}}
                                     type="email"
-                                    id="login-email"
                                     className="text-brand shadow bg-soft text-xl p-4 my-2 w-full rounded-2xl focus:outline-none"
-                                    placeholder="Email"
+                                    placeholder="email"
                                     autocomplete="off"
                                 />
-                                <input name="password" type="password" id="login-password"
+                                <input 
+                                    onChange={(e)=>{setPassword(e.target.value)}}
+                                    type="password"
                                     className="text-brand shadow bg-soft text-xl p-4 my-2 w-full rounded-2xl focus:outline-none"
-                                    placeholder="Contraseña" />
+                                    placeholder="contraseña" />
                                 <button type="submit"
                                     className="hover:shadow transition duration-300 w-full border-2 bg-brand hover:bg-transparent border-brand text-white hover:text-brand my-2 p-3 rounded-2xl md:text-2xl xs:text-xl focus:outline-none">Registrate</button>
                             </form>
@@ -122,7 +124,7 @@ const Signup = () => {
                             <button onClick={loginGoogle} className="bg-white w-full flex justify-center items-center font-serif text-2xl border border-gray-200 shadow hover:shadow-lg transition duration-100 rounded-xl p-3 my-5 mb-3 focus:outline-none">
                                 <img className="w-6 mx-3" src={google} alt="google" />Google</button>
                         </div>
-                        <p className="transition duration-300 font-xl flex justify-center w-full my-5 text-gray-500">Ya tienes una cuenta?  <Link className="underline ml-2" to="/login">Ingresa</Link></p>
+                        <p className="transition duration-300 font-xl flex justify-center w-full my-5 text-gray-500">Ya tienes una cuenta?  <Link className="underline ml-2" to="/login">Ingresar</Link></p>
                         <Link to="/reset" id="forget-password" class="transition duration-300 hover:underline font-xl flex justify-center w-full text-gray-500">
                             ¿Olvidaste tu contraseña?
                         </Link>

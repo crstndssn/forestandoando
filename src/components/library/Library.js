@@ -22,10 +22,10 @@ const Products = () => {
 
     return (
         <>
-            <div className="w-full container mx-auto flex justify-center items-center flex-col">
+            {/* <div className="w-full container mx-auto flex justify-center items-center flex-col">
                 <h1 className="md:text-5xl xs:text-4xl font-semibold text-brand">Biblioteca</h1>
-            </div>
-            <div className="container mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-3 md:mt-10 xs:mt-10">
+            </div> */}
+            <div className="container mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-3 md:mt-7 xs:mt-10">
                 {
                     postUser.length !== 0 ? (
                         postUser.map(item => (
