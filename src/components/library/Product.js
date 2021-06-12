@@ -16,8 +16,6 @@ const Product = () => {
 
     const obternerPost = async () => {
 
-
-
         await store.collection('products').doc(id)
             .get()
             .then((doc) => {

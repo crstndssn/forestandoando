@@ -11,7 +11,6 @@ const Products = () => {
 
         const getPost = async () => {
             const { docs } = await store.collection('products').get()
-
             const nuevoArray = docs.map(item => ({ id: item.id, ...item.data() }))
             setPostUser(nuevoArray)
             console.log(postUser)

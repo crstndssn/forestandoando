@@ -22,7 +22,7 @@ const Pricing = () => {
     })
 
     return (
-        <div className="mx-auto container grid md:grid-cols-3 xs:min-h-auto text-brand gap-5">
+        <div className="mx-auto container grid md:grid-cols-2 xs:min-h-auto text-brand gap-5">
             <div className="w-full h-full flex justify-between items-center flex-col shadow bg-white rounded-xl p-10 md:mt-0 xs:mt-5">
                 <div className="w-full flex justify-start items-center flex-col">
                     <div className="w-full flex justify-start mt-4">
@@ -81,7 +81,7 @@ const Pricing = () => {
                 </div>
                 <a href="https://mpago.li/17UZRJw" target="blank" className="w-full text-center border-2 border-brand bg-brand font-medium text-white hover:text-brand hover:border-brand hover:bg-white transition text-2xl py-2 mt-10 mb-5 rounded-xl duration-200">Comienza</a>
             </div>
-            <div className="w-full h-full flex justify-between items-center flex-col shadow bg-white rounded-xl md:p-10 xs:p-7 md:mt-0 xs:mt-2">
+            {/* <div className="w-full h-full flex justify-between items-center flex-col shadow bg-white rounded-xl md:p-10 xs:p-7 md:mt-0 xs:mt-2">
                 <div className="w-full flex justify-center items-center flex-col">
                     <div className="w-full flex justify-start mt-4">
                         <p className="xs:text-2xl md:text-3xl font-base font-semibold rounded-full">3 meses por</p>
@@ -113,7 +113,7 @@ const Pricing = () => {
                     </div>
                 </div>
                 <a href="https://mpago.li/2Wukg4d" target="blank" className="w-full text-center border-2 border-brand bg-brand font-medium text-white hover:text-brand hover:border-brand hover:bg-white transition durattion-200 text-2xl py-2 mt-14 mb-5 rounded-xl">Comienza</a>
-            </div>
+            </div> */}
         </div>
     )
 }

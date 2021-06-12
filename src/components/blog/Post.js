@@ -25,6 +25,9 @@ const Post = () => {
         obtenerPost();
     }, [])
 
+    const createMarkup = () => {
+        return {__html: post.content}
+    }
 
     return (
         <div className="w-full container mx-auto flex justify-center items-center flex-col">
@@ -35,11 +38,11 @@ const Post = () => {
                 </div>
                 <p className="md:text-2xl xs:text-xl my-2">{post.description}</p>
                 <img src={post.imagen} alt="imagen" className="mt-5 rounded-xl" />
-                <div className="my-5">
-                    <p className="md:text-2xl xs:text-xl">{post.content}</p>
+                <div className="my-5 text-justify">
+                    <div className="md:text-xl xs:text-lg text-base" dangerouslySetInnerHTML={createMarkup()}/>
                 </div>
             </div>
-        </div>
+        </div>  
     )
 }
 

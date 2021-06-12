@@ -16,7 +16,9 @@ import Post from './components/blog/Post';
 import AddPost from './components/blog/AddPost';
 import EditPost from './components/blog/EditPost';
 import Blog from './components/blog/Blog';
+import AdminBlog from './components/blog/AdminBlog'
 
+import Account from './components/admin/Account';
 
 import Product from './components/library/Product';
 import AddProduct from './components/library/AddProduct';
@@ -58,24 +60,28 @@ export default class App extends Component {
             <Route path="/signup" component={Signup} />
             
             {/* admin */}
-            <Route path="/settings" component={Admin} />
-            <Route path="/add-post" component={AddPost} />
-            <Route path="/add-product" component={AddProduct} />
+            <Route exact path="/settings" component={Admin} />
+            <Route path="/settings/add-post" component={AddPost} />
+            <Route path="/settings/add-product" component={AddProduct} />
+            <Route path="/settings/biblioteca" component={Stock} />
+            <Route path="/settings/blog" component={AdminBlog} />
 
             {/* library */}
             <Route path="/product/:id" component={Product}/>
-            <Route path="/edit-product/:id" component={EditProduct}/>
+            <Route path="/settings/edit-product/:id" component={EditProduct}/>
             <Route path="/biblioteca" component={Biblioteca} />
-            <Route path="/stock" component={Stock} />
+
 
             {/* blog */}
             <Route path="/post/:id" component={Post}/>
-            <Route path="/edit-post/:id" component={EditPost}/>
+            <Route path="/settings/edit-post/:id" component={EditPost}/>
             <Route path="/blog" component={Blog} />
+
+            {/* account */}
+            <Route path="/account" component={Account} />
 
             {/* pay */}
             <Route path="/pagos" component={Pay} />
-
             <Route path="/legal" component={Legal} />
 
           </Switch>

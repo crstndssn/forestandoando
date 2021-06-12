@@ -13,9 +13,9 @@ export default class Footer extends Component {
                     </a>
                 </div>
                 <div className="flex justify-between items-center md:flex-row xs:flex-col">
-                    <div className="flex justify-center items-center xs:flex-col md:flex-row" >
+                    {/* <div className="flex justify-center items-center xs:flex-col md:flex-row" >
                         <Link to="/legal" className="text-gray-200 text-lg my-2 hover:underline transition duration-300">Política de Privacidad</Link>
-                    </div>
+                    </div> */}
                     <p className="text-gray-200 text-lg md:my-0 md:mt-3 xs:mb-7 xs:mt-3">Forestando Ando &copy; 2021</p>
                 </div>
 

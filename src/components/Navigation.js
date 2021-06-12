@@ -9,7 +9,7 @@ import { AdjustmentsIcon } from '@heroicons/react/outline'
 import { BookOpenIcon } from '@heroicons/react/outline'
 import { LibraryIcon } from '@heroicons/react/outline'
 import { LogoutIcon } from '@heroicons/react/outline'
-import { CogIcon } from '@heroicons/react/outline'
+import { CogIcon, PlusCircleIcon, DocumentAddIcon } from '@heroicons/react/outline'
 
 
 
@@ -33,6 +33,7 @@ const Navigation = () => {
     const history = useHistory();
 
     const [user, setUsuario] = useState(null)
+    const [photo, setPhoto] = useState('')
 
     const [admin, setAdmin] = useState(null)
 
@@ -40,7 +41,9 @@ const Navigation = () => {
         auth.onAuthStateChanged((user) => {
             if (user) {
                 setUsuario(true)
-                if (user.email == 'dussan29@gmail.com') {
+                setPhoto(user.photoURL)
+                if (user.email == 'forestandoando@gmail.com') {
+
                     setAdmin(true)
                 } else {
                     setAdmin(false)
@@ -49,7 +52,6 @@ const Navigation = () => {
             } else {
                 setUsuario(false)
             }
-
         })
     })
 
@@ -87,12 +89,23 @@ const Navigation = () => {
                                 {({ open }) => (
                                     <>
                                         <div>
-                                            <Menu.Button className="inline-flex justify-center items-center w-full rounded-full px-4 py-1 border border-brand  bg-brand transition duration-200 hover:bg-white text-white xs:text-lg md:text-x font-medium hover:text-brand focus:outline-none">
+                                            <Menu.Button className="inline-flex justify-between items-center w-full rounded-full p-1 border border-brand  bg-brand transition duration-200 hover:bg-white text-white xs:text-lg md:text-x font-medium hover:text-brand focus:outline-none">
                                                 <div className="flex justify-start items-center">
-                                                    <UserIcon className="w-5 mr-2" />
-                                                    <p>Perfil</p>
+                                                    {
+                                                        !photo == true ? (
+                                                            <UserIcon className="w-5 mx-2" />
+                                                        ) : (
+                                                            <img className="w-7 rounded-full mr-2" src={photo} alt="photo" />
+                                                        )
+                                                    }
+
                                                 </div>
-                                                <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
+
+                                                <div className="flex justify-center items-center ml-1 mr-2">
+                                                    <p>Perfil</p>
+                                                    <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
+                                                </div>
+
                                             </Menu.Button>
                                         </div>
 
@@ -111,10 +124,10 @@ const Navigation = () => {
                                                 className="origin-top-right absolute right-0 mt-2 w-48 rounded-3xl shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                                             >
                                                 <div className="py-1">
-                                                    <Menu.Item>
+                                                    {/* <Menu.Item>
                                                         {({ active }) => (
                                                             <Link
-                                                                to="/config"
+                                                                to="/account"
                                                                 className={classNames(
                                                                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                                                     'block px-4 py-2 m-1 text-sm rounded-full'
@@ -122,12 +135,12 @@ const Navigation = () => {
                                                             >
                                                                 <div className="flex justify-start items-center">
                                                                     <CogIcon className="w-5 mr-2" />
-                                                                    <p className="text-lg text-medium">Config</p>
+                                                                    <p className="text-lg text-medium">Cuenta</p>
                                                                 </div>
 
                                                             </Link>
                                                         )}
-                                                    </Menu.Item>
+                                                    </Menu.Item> */}
                                                     <Menu.Item>
                                                         {({ active }) => (
                                                             <Link
@@ -151,7 +164,7 @@ const Navigation = () => {
                                                                 to="/biblioteca"
                                                                 className={classNames(
                                                                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                                                    'xs:block md:hidden px-4 py-2 m-1 text-sm rounded-full'
+                                                                    'xs:block px-4 py-2 m-1 text-sm rounded-full md:hidden '
                                                                 )}
                                                             >
                                                                 <div className="flex justify-start items-center">
@@ -167,16 +180,42 @@ const Navigation = () => {
                                                             <Menu.Item>
                                                                 {({ active }) => (
                                                                     <Link
-                                                                        to="/settings"
+                                                                        to="/settings/blog"
                                                                         className={classNames(
                                                                             active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                                                            'block px-4 py-2 text-sm m-1 rounded-full'
+                                                                            'block px-4 py-2 m-1 text-sm rounded-full'
                                                                         )}
                                                                     >
                                                                         <div className="flex justify-start items-center">
-                                                                            <AdjustmentsIcon className="w-5 mr-2" />
-                                                                            <p className="text-lg text-medium">Opciones</p>
+                                                                            <DocumentAddIcon className="w-5 mr-2" />
+                                                                            <p className="text-lg text-medium">Add Post</p>
                                                                         </div>
+
+                                                                    </Link>
+                                                                )}
+                                                            </Menu.Item>
+
+                                                        ) : (
+                                                            <span></span>
+                                                        )
+                                                    }
+
+                                                    {
+                                                        admin == true ? (
+                                                            <Menu.Item>
+                                                                {({ active }) => (
+                                                                    <Link
+                                                                        to="/settings/biblioteca"
+                                                                        className={classNames(
+                                                                            active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                                                            'block px-4 py-2 m-1 text-sm rounded-full'
+                                                                        )}
+                                                                    >
+                                                                        <div className="flex justify-start items-center">
+                                                                            <PlusCircleIcon className="w-5 mr-2" />
+                                                                            <p className="text-lg text-medm">Add Product</p>
+                                                                        </div>
+
                                                                     </Link>
                                                                 )}
                                                             </Menu.Item>
@@ -192,12 +231,12 @@ const Navigation = () => {
                                                                 type="submit"
                                                                 className={classNames(
                                                                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                                                    'w-11/12 block px-4 py-2 text-sm m-1 rounded-full'
+                                                                    'w-11/12 block px-4 py-2 text-sm m-1 rounded-full focus:outline-none'
                                                                 )}
                                                             >
                                                                 <div className="flex justify-start items-center">
                                                                     <LogoutIcon className="w-5 mr-2" />
-                                                                    <p className="text-lg text-medium">Salir</p>
+                                                                    <p className="text-lg text-medium">Cerrar Sesión</p>
                                                                 </div>
                                                             </button>
                                                         )}

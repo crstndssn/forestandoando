@@ -31,14 +31,14 @@ const Blog = () => {
                                     </div>
 
                                     <div className="px-3 py-2">
-                                        <p className="text-2xl font-semibold text-gray-800">{item.name}</p>
-                                        <div className="w-full flex justify-between items-center">
-                                            <p className="border-2 border-gray-300 px-2 py-1 rounded-full mr-2 text-sm">{item.autor}</p>
-                                            {/* <div className="bg-red-200 rounded-full w-9 h-9 flex justify-center items-center">
-                                            <HeartIcon className="text-red-600 w-7" aria-hidden="true" />
-                                        </div> */}
+                                        <div className="w-full flex justify-between items-start">
+                                            <p className="text-2xl font-semibold text-gray-800">{item.name}</p>
+                                            <p className="border border-brand px-2 rounded-full m-1 text-brand bg-white font-medium">
+                                                {item.autor}
+                                            </p>
                                         </div>
                                     </div>
+
                                 </div>
                             </Link>
                         ))
