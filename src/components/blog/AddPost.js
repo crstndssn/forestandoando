@@ -110,31 +110,44 @@ const AddPost = () => {
     return (
         <div className="container mx-auto flex justify-center items-center flex-col mt-10">
 
-            <div className="w-full flex justify-center">
-                <h1 className="xs:text-3xl md:text-5xl font-medium text-brand">Add post</h1>
-            </div>
+            <form onSubmit={setPost} className="w-full container mx-auto flex justify-center items-center flex-col mt-8 text-gray-800">
 
-            <form onSubmit={setPost} className="flex justify-center items-center flex-col mt-8">
+                <div className="w-full flex justify-center">
+                    <h1 className="xs:text-3xl md:text-5xl font-medium text-brand">Add post</h1>
+                </div>
 
-                <textarea
-                    value={name}
-                    onChange={(e) => { setName(e.target.value) }}
-                    className="w-full bg-organic text-gray-900  md:text-6xl xs:text-3xl font-medium my-1 mt-2 px-10 focus:outline-none"
-                    placeholder="Title">
-                </textarea>
+                <div class="md:w-2/3 xd:w-full mt-10 flex justify-center items-start flex-col">
+                    <input
+                        value={name}
+                        onChange={(e) => { setName(e.target.value) }}
+                        className="w-full bg-organic text-gray-900  md:text-6xl xs:text-3xl font-medium my-2  focus:outline-none"
+                        placeholder="Title" />
+                        <div className="flex justify-center items-center md:text-xl xs:text-lg my-2">
+                        <p className="mr-2">
+                            por
+                        </p>
+                        <input
+                            value={autor}
+                            onChange={(e) => { setAutor(e.target.value) }}
+                            className="bg-organic text-gray-700  font-medium my-1 focus:outline-none"
+                            placeholder="autor's name"
+                        />
+                    </div>
+                </div>
 
-                <div className="md:w-full xs:w-full md:p-10 xs:p-0">
+
+                <div className="md:w-2/3 xd:w-full mt-7">
                     {
-                            imagen == '' ? (
-                                <div>
-                                    <input
-                                        onChange={(e) => { uploadFile(e) }}
-                                        name="upload-image"
-                                        className="bg-organic text-gray-900 py-2 md:text-xl xs:text-3xl font-medium my-1 mt-2 focus:outline-none"
-                                        type="file"
-                                    />
-                                </div>
-                            )
+                        imagen == '' ? (
+                            <div>
+                                <input
+                                    onChange={(e) => { uploadFile(e) }}
+                                    name="upload-image"
+                                    className="bg-organic text-gray-900 py-2 md:text-xl xs:text-3xl font-medium my-1 mt-2 focus:outline-none"
+                                    type="file"
+                                />
+                            </div>
+                        )
                             :
                             (
                                 <div>
@@ -150,33 +163,26 @@ const AddPost = () => {
                     }
                 </div>
 
-                <div className="w-full md:px-10 xs:px-0">
-                    <div>
-                        <input
-                            value={autor}
-                            onChange={(e) => { setAutor(e.target.value) }}
-                            className="w-full bg-organic text-gray-700 md:text-3xl xs:text-xl font-medium mb-10 focus:outline-none"
-                            placeholder="por:"
-                        />
-                        <Editor
-                            apiKey="mymbkaj0hl9txwpvhiv5n58z1m0s8n5jf1qj58xluzhi15ow"
-                            onChange={log}
-                            onInit={(evt, editor) => editorRef.current = editor}
-                            init={{
-                                height: 500,
-                                menubar: false,
-                                plugins: [
-                                    'advlist autolink lists link image charmap print preview anchor',
-                                    'searchreplace visualblocks code fullscreen',
-                                    'insertdatetime media table paste code help wordcount'
-                                ],
-                                toolbar: 'undo redo | formatselect | ' +
-                                    'bold italic backcolor | alignleft aligncenter ' +
-                                    'alignright alignjustify | bullist numlist outdent indent | ' +
-                                    'removeformat | help | link',
-                            }}
-                        />
-                    </div>
+                <div className="md:w-2/3 xd:w-full mt-10">
+                    <Editor
+                        apiKey="mymbkaj0hl9txwpvhiv5n58z1m0s8n5jf1qj58xluzhi15ow"
+                        onChange={log}
+                        onInit={(evt, editor) => editorRef.current = editor}
+                        init={{
+                            height: 500,
+                            menubar: false,
+                            plugins: [
+                                'advlist autolink lists link image charmap print preview anchor',
+                                'searchreplace visualblocks code fullscreen',
+                                'insertdatetime media table paste code help wordcount'
+                            ],
+                            toolbar: 'undo redo | formatselect | ' +
+                                'bold italic backcolor | alignleft aligncenter ' +
+                                'alignright alignjustify | bullist numlist outdent indent | ' +
+                                'removeformat | help | link',
+                        }}
+                    />
+
 
                     <div class="flex justify-center items-center w-full mt-10">
                         <button action="submit" class="md:w-1/3 xs:w-1/2 bg-brand text-white text-semibold my-4 p-3 rounded-2xl md:text-2xl xs:text-2xl focus:outline-none">Publicar</button>

@@ -135,10 +135,33 @@ const EditPost = () => {
     const editorRef = useRef(null)
 
     return (
-        <form onSubmit={setUpdate} className="w-1/2 container mx-auto flex justify-center items-center flex-col mt-8 text-gray-800">
+        <form onSubmit={setUpdate} className="w-full container mx-auto flex justify-center items-center flex-col mt-8 text-gray-800">
 
 
-            <div className="w-full md:p-10 xs:p-0">
+            <div className="w-full flex justify-center">
+                <h1 className="xs:text-3xl md:text-5xl font-medium text-brand">Edit post</h1>
+            </div>
+
+            <div class="md:w-2/3 xd:w-full mt-10 flex justify-center items-start flex-col">
+                <input
+                    value={name}
+                    onChange={(e) => { setName(e.target.value) }}
+                    className="w-full bg-organic text-gray-900  md:text-6xl xs:text-3xl font-medium my-1 mt-2 focus:outline-none"
+                    placeholder="Title" />
+                <div className="flex justify-center items-center md:text-xl xs:text-lg my-2">
+                    <p className="mr-2">
+                        por
+                    </p>
+                    <input
+                        value={autor}
+                        onChange={(e) => { setAutor(e.target.value) }}
+                        className="bg-organic text-gray-700  font-medium my-1 focus:outline-none"
+                        placeholder="autor's name"
+                    />
+                </div>
+            </div>
+
+            <div className="md:w-2/3 xd:w-full mt-7">
                 {
                     imagen == '' ? (
                         <div>
@@ -146,7 +169,7 @@ const EditPost = () => {
                             <input
                                 onChange={(e) => { updateFile(e) }}
                                 name="upload-image"
-                                className="bg-organic text-gray-900 py-2 md:text-xl xs:text-3xl font-medium my-1 mt-2 focus:outline-none"
+                                className="bg-organic text-gray-900 py-2 md:text-xl xs:text-base font-medium my-1 mt-2 focus:outline-none"
                                 type="file" />
 
                         </div>
@@ -154,7 +177,7 @@ const EditPost = () => {
                     )
                         :
                         (<div>
-                            <img className="w-full" src={imagen} alt="imagen-2" />
+                            <img className="w-full rounded-lg" src={imagen} alt="imagen-2" />
                         </div>
                         )
                 }
@@ -166,11 +189,11 @@ const EditPost = () => {
                     )
                         :
                         (<div>
-                            <img className="w-full" src={newImagen} alt="imagen-nueva" />
+                            {/* <img className="w-full" src={newImagen} alt="imagen-nueva" /> */}
                             <input
                                 onChange={(e) => { updateFile(e) }}
                                 name="upload-image"
-                                className="bg-organic text-gray-900 py-2 md:text-xl xs:text-3xl font-medium my-1 mt-2 focus:outline-none"
+                                className="bg-organic text-gray-900 py-2 md:text-xl xs:text-base font-medium my-1 mt-2 focus:outline-none"
                                 type="file" />
                         </div>
                         )
@@ -184,55 +207,35 @@ const EditPost = () => {
                 }
             </div>
 
-            <div className="w-full md:px-10 xs:px-0">
-
-                <div>
-                    <input
-                        value={name}
-                        onChange={(e) => { setName(e.target.value) }}
-                        className="w-full bg-organic text-gray-900  md:text-6xl xs:text-3xl font-medium my-1 mt-2 focus:outline-none"
-                        placeholder="Title" />
-                    <input
-                        value={description}
-                        onChange={(e) => { setDescription(e.target.value) }}
-                        className="w-full bg-organic text-gray-700 py-4 text-lg focus:outline-none"
-                        placeholder="Description" />
-
-                    <input
-                        value={autor}
-                        onChange={(e) => { setAutor(e.target.value) }}
-                        className="w-full bg-organic text-gray-700 md:text-3xl xs:text-xl font-medium my-1 focus:outline-none"
-                        placeholder="por:"
-                    />
-                    <Editor
-                        value={content}
-                        apiKey="mymbkaj0hl9txwpvhiv5n58z1m0s8n5jf1qj58xluzhi15ow"
-                        onEditorChange={(newValue) => {
-                            setContent(newValue);
-                          }}
-                        onInit={(evt, editor) => editorRef.current = editor}
-                        init={{
-                            height: 500,
-                            menubar: false,
-                            plugins: [
-                                'advlist autolink lists link image charmap print preview anchor',
-                                'searchreplace visualblocks code fullscreen',
-                                'insertdatetime media table paste code help wordcount'
-                            ],
-                            toolbar: 'undo redo | formatselect | ' +
-                                'bold italic backcolor | alignleft aligncenter ' +
-                                'alignright alignjustify | bullist numlist outdent indent | ' +
-                                'removeformat | help | link',
-                        }}
-                    />
-                </div>
+            <div className="md:w-2/3 xd:w-full mt-10">
+                <Editor
+                    value={content}
+                    apiKey="mymbkaj0hl9txwpvhiv5n58z1m0s8n5jf1qj58xluzhi15ow"
+                    onEditorChange={(newValue) => {
+                        setContent(newValue);
+                    }}
+                    onInit={(evt, editor) => editorRef.current = editor}
+                    init={{
+                        height: 500,
+                        menubar: false,
+                        plugins: [
+                            'advlist autolink lists link image charmap print preview anchor',
+                            'searchreplace visualblocks code fullscreen',
+                            'insertdatetime media table paste code help wordcount'
+                        ],
+                        toolbar: 'undo redo | formatselect | ' +
+                            'bold italic backcolor | alignleft aligncenter ' +
+                            'alignright alignjustify | bullist numlist outdent indent | ' +
+                            'removeformat | help | link',
+                    }}
+                />
             </div>
 
-            <div className="w-full flex justify-center items-center mt-5">
-                <div class="flex justify-center items-center w-full mt-10 m-3">
-                    <Link to="/" class="w-full text-center bg-transparent border-2 border-brand text-brand text-semibold my-4 p-3 rounded-2xl md:text-2xl xs:text-2xl focus:outline-none">Cancelar</Link>
+            <div className="md:w-2/3 xd:w-full mt-10 flex justify-center items-center">
+                <div class="flex justify-center items-center w-full m-3">
+                    <Link to={`/post/${id}`} class="w-full text-center bg-transparent border border-brand text-brand text-semibold my-4 p-3 rounded-2xl md:text-2xl xs:text-2xl focus:outline-none">Cancelar</Link>
                 </div>
-                <div class="flex justify-center items-center w-full mt-10 m-3">
+                <div class="flex justify-center items-center w-full m-3">
                     <button action="submit" class="w-full bg-brand text-white text-semibold my-4 p-3 rounded-2xl md:text-2xl xs:text-2xl focus:outline-none">Actualizar</button>
                 </div>
             </div>

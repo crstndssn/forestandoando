@@ -77,7 +77,7 @@ const Navigation = () => {
                         <p className="text-xl text-medium">Blibioteca</p>
                     </Link>
                 </div>
-                <div className="xs:w-2/3 md:w-auto flex justify-end items-center">
+                <div className="xs:w-full md:w-auto flex justify-end items-center">
                     {
                         !user ? (
 
@@ -89,11 +89,11 @@ const Navigation = () => {
                                 {({ open }) => (
                                     <>
                                         <div>
-                                            <Menu.Button className="inline-flex justify-between items-center w-full rounded-full p-1 border border-brand  bg-brand transition duration-200 hover:bg-white text-white xs:text-lg md:text-x font-medium hover:text-brand focus:outline-none">
+                                            <Menu.Button className="inline-flex justify-between items-center w-full rounded-full p-1 border border-brand  bg-brand transition duration-200 hover:bg-white text-white xs:text-lg md:text-xl font-medium hover:text-brand focus:outline-none">
                                                 <div className="flex justify-start items-center">
                                                     {
                                                         !photo == true ? (
-                                                            <UserIcon className="w-5 mx-2" />
+                                                            <UserIcon className="md:w-5 xs:w-10 mx-2" />
                                                         ) : (
                                                             <img className="w-7 rounded-full mr-2" src={photo} alt="photo" />
                                                         )
@@ -102,7 +102,7 @@ const Navigation = () => {
                                                 </div>
 
                                                 <div className="flex justify-center items-center ml-1 mr-2">
-                                                    <p>Perfil</p>
+                                                    <p>Menú</p>
                                                     <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
                                                 </div>
 

@@ -37,9 +37,9 @@ const Post = () => {
                     <p className="text-gray-600 text-lg">por <span className="text-gray-800 font-medium">{post.autor}</span></p> 
                 </div>
                 <p className="md:text-2xl xs:text-xl my-2">{post.description}</p>
-                <img src={post.imagen} alt="imagen" className="mt-5 rounded-xl" />
-                <div className="my-5 text-justify">
-                    <div className="md:text-xl xs:text-lg text-base" dangerouslySetInnerHTML={createMarkup()}/>
+                <img src={post.imagen} alt="imagen" className="mt-5 rounded-lg" />
+                <div className="mt-10">
+                    <div className="md:text-xl xs:text-lg" dangerouslySetInnerHTML={createMarkup()}/>
                 </div>
             </div>
         </div>  

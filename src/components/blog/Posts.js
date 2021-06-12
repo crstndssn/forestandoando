@@ -32,11 +32,11 @@ const Posts = () => {
                                 </div>
 
                                 <div className="px-3 py-2">
-                                    <div className="w-full flex justify-between items-start">
-                                        <p className="text-2xl font-semibold text-gray-800">{item.name}</p>
-                                        <p className="border border-brand px-2 rounded-full m-1 text-brand bg-white font-medium">
+                                    <div className="w-full flex justify-between items-start flex-col">
+                                        <p className="rounded-full text-brand bg-white font-medium">
                                             {item.autor}
                                         </p>
+                                        <p className="text-2xl font-semibold text-gray-800 leading-tight">{item.name}</p>
                                     </div>
                                 </div>
 
