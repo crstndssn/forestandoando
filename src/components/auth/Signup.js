@@ -94,7 +94,7 @@ const Signup = () => {
                 <div className="flex justify-center items-center">
                     <div className="container mx-auto flex justify-center items-center flex-col">
                         <div className="md:w-1/2 xs:w-full flex justify-center items-center flex-col">
-                        <h3 className="text-brand font-medium text-4xl mt-2 mb-4"><span className="text-nature">Regístrate</span><span className="text-ando">ando</span></h3>
+                        <h3 className="text-brand font-medium text-4xl mt-2 mb-4"><span className="text-nature">#forestando</span><span className="text-ando">ando</span></h3>
                             <form id="form-login" onSubmit={handleSubmit}>
                                 <input
                                     onChange={(e) => {setUsername(e.target.value) }}

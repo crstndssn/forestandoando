@@ -19,8 +19,6 @@ const AddProduct = () => {
     const [luz, setLuz] = useState('');
     const [agua, setAgua] = useState('');
     const [temperatura, setTemperatura] = useState('');
-    const [precio, setPrecio] = useState('');
-    const [cantidadTotal, setCantidadTotal] = useState(0);
 
     const [loadImg, setLoadImg] = useState('');
 
@@ -56,9 +54,6 @@ const AddProduct = () => {
         if (!temperatura.trim()) {
             setError('No tiene temperatura')
         }
-        if (!precio.trim()) {
-            setError('No tiene precio')
-        }
 
         const product = {
             imagen: imagen,
@@ -68,9 +63,7 @@ const AddProduct = () => {
             uso: uso,
             luz: luz,
             agua: agua,
-            temperatura: temperatura,
-            cantidadTotal: cantidadTotal,
-            precio: precio
+            temperatura: temperatura
         }
 
         try {
@@ -86,9 +79,6 @@ const AddProduct = () => {
         setLuz('')
         setAgua('')
         setTemperatura('')
-        setCantidadTotal('')
-        setPrecio('')
-
     }
 
     const uploadFile = (e) => {
@@ -130,7 +120,7 @@ const AddProduct = () => {
                 <h1 className="xs:text-3xl md:text-5xl font-medium text-brand">Añadir producto</h1>
             </div>
 
-            <form onSubmit={setProduct} className="flex justify-center items-center mt-8">
+            <form onSubmit={setProduct} className="flex justify-center items-center md:flex-row xs:flex-col mt-8">
 
                 <div className="md:w-1/2 xs:w-full md:p-10 xs:p-0">
                     {
@@ -139,7 +129,7 @@ const AddProduct = () => {
                                 <input
                                     onChange={(e) => { uploadFile(e) }}
                                     name="upload-image"
-                                    className="bg-organic text-gray-900 py-2 md:text-xl xs:text-3xl font-medium my-1 mt-2 focus:outline-none"
+                                    className="bg-organic text-gray-900 py-2 md:text-xl xs:text-lg font-medium my-1 mt-2 focus:outline-none"
                                     type="file" />
 
                             </div>
@@ -164,10 +154,8 @@ const AddProduct = () => {
                         )
                     }
                 </div>
-
                 <div className="md:w-1/2 xs:w-full">
                     <div className="mt-4 w-full ">
-
 
                         <input
                             value={nombre}
@@ -193,68 +181,45 @@ const AddProduct = () => {
                             className="w-full bg-leave mt-6 min-h-30 shadow rounded-lg p-4 md:text-xl xs:text-lg my-1 text-gray-800 h-32 focus:outline-none"
                             placeholder="Description">
                         </textarea>
-                        
                     </div>
-
-                    <div className="w-full flex justify-around mt-3 bg-brand bg-opacity-10 rounded-md py-4">
-
-                        <div className="flex justify-center items-center flex-col">
-                            <img className="xs:w-12 md:w-16 mb-2" src={sun} alt="sun" />
-                            <input
-                                value={luz}
-                                onChange={(e) => { setLuz(e.target.value) }}
-                                className="w-full bg-transparent py-2 rounded text-brand md:text-xl xs:text-lg text-center placeholder-brand focus:outline-none"
-                                placeholder="Clima" />
+                    <div className="flex justify-center items-center flex-col">
+                        <div className="w-full flex justify-center items-center md:flex-row xs:flex-col bg-brand bg-opacity-10 rounded-md md:py-4 xs:py-6 mb-5">
+                            <div className="w-1/4 flex justify-center items-center">
+                                <img className="xs:w-16 md:w-16 md:my-0 xs:my-4" src={sun} alt="figure" />
+                            </div>
+                            <div className="w-3/4 flex justify-center items-center pr-5">
+                                <input
+                                    value={luz}
+                                    onChange={(e) => { setLuz(e.target.value) }}
+                                    className="w-full bg-transparent py-2 rounded text-brand md:text-xl xs:text-lg text-center placeholder-brand focus:outline-none"
+                                    placeholder="Luz" />
+                            </div>
                         </div>
-
-                        <div className="flex justify-center items-center flex-col">
-                            <img
-                                className="xs:w-8 md:w-10 mb-2"
-                                src={water}
-                                alt="water" />
-                            <input
-                                value={agua}
-                                onChange={(e) => { setAgua(e.target.value) }}
-                                className="w-full bg-transparent py-2 rounded text-brand md:text-xl xs:text-lg text-center placeholder-brand focus:outline-none"
-                                placeholder="Agua" />
+                        <div className="w-full flex justify-center items-center md:flex-row xs:flex-col bg-brand bg-opacity-10 rounded-md md:py-4 xs:py-6 mb-5">
+                            <div className="w-1/4 flex justify-center items-center">
+                                <img className="xs:w-12 md:w-10 md:my-0 xs:my-4" src={water} alt="figure" />
+                            </div>
+                            <div className="w-3/4 flex justify-center items-center pr-5">
+                                <input
+                                    value={agua}
+                                    onChange={(e) => { setAgua(e.target.value) }}
+                                    className="w-full bg-transparent py-2 rounded text-brand md:text-xl xs:text-lg text-center placeholder-brand focus:outline-none"
+                                    placeholder="Agua" />
+                            </div>
                         </div>
-
-                        <div className="flex justify-center items-center flex-col">
-                            <img 
-                                className="xs:w-7 md:w-9 mb-2" 
-                                src={wheater} 
-                                alt="wheater" 
-                            />
-                            <input 
-                                value={temperatura} 
-                                onChange={(e) => { setTemperatura(e.target.value) }} 
-                                className="w-full bg-transparent py-2 rounded text-brand md:text-xl xs:text-lg text-center placeholder-brand focus:outline-none" 
-                                placeholder="Temperatura" />
+                        <div className="w-full flex justify-center items-center md:flex-row xs:flex-col bg-brand bg-opacity-10 rounded-md md:py-4 xs:py-6 mb-5">
+                            <div className="w-1/4 flex justify-center items-center">
+                                <img className="xs:w-10 md:w-9 md:my-0 xs:my-4" src={wheater} alt="figure" />
+                            </div>
+                            <div className="w-3/4 flex justify-center items-center pr-5">
+                                <input
+                                    value={temperatura}
+                                    onChange={(e) => { setTemperatura(e.target.value) }}
+                                    className="w-full bg-transparent py-2 rounded text-brand md:text-xl xs:text-lg text-center placeholder-brand focus:outline-none"
+                                    placeholder="Temperatura" />
+                            </div>
                         </div>
-
-
-
                     </div>
-                    <div>
-                        {/* <Category /> */}
-                    </div>
-                    <div>
-                        <input
-                            value={cantidadTotal}
-                            onChange={(e) => { setCantidadTotal(e.target.value) }}
-                            className="w-full shadow my-3 bg-transparent py-2 rounded text-brand md:text-xl xs:text-lg text-center placeholder-brand focus:outline-none"
-                            placeholder="cantidad"
-                            type="number"
-                        />
-                    </div>
-                    <div className="w-full flex justify-center items-center text-center gap-2 mt-5">
-
-                        <div className="w-full text-xl rounded-lg text-center">
-                            <input value={precio} onChange={(e) => { setPrecio(e.target.value) }} className="w-full bg-transparent border-2 border-brand text-brand p-3 text-xl rounded-lg text-center placeholder-brand focus:outline-none" placeholder="Precio" />
-                        </div>
-
-                    </div>
-
                     <div class="flex justify-center items-center w-full mt-10">
                         <button action="submit" class="md:w-1/3 xs:w-1/2 bg-brand text-white text-semibold my-4 p-3 rounded-2xl md:text-2xl xs:text-2xl focus:outline-none">Publicar</button>
                     </div>

@@ -13,13 +13,13 @@ const EditPost = () => {
     const [post, setPost] = useState([])
 
     const [imagen, setImagen] = useState('');
+    const [imagenStatus, setImagenStatus] = useState(null);
+
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
     const [content, setContent] = useState('');
     const [autor, setAutor] = useState('');
     const [date, setDate] = useState('');
-
-    const [newImagen, setNewImagen] = useState('');
     const [loadImg, setLoadImg] = useState('');
 
 
@@ -61,9 +61,10 @@ const EditPost = () => {
 
         e.preventDefault()
 
-        // if (!imagen.trim()) {
-        //     setError('No tiene imagen')
-        // }
+        if (!imagen.trim()) {
+            setImagenStatus(true)
+            setError('No tiene imagen')
+        }
         // if (!name.trim()) {
         //     setError("No tiene nombre")
         // }
@@ -121,7 +122,7 @@ const EditPost = () => {
                 upload.snapshot.ref
                     .getDownloadURL()
                     .then(url => {
-                        setNewImagen(url)
+                        setImagen(url)
                         sessionStorage.setItem('imgNewPost', url)
                     })
                     .catch(err => {
@@ -163,39 +164,28 @@ const EditPost = () => {
 
             <div className="md:w-2/3 xd:w-full mt-7">
                 {
-                    imagen == '' ? (
+                    imagenStatus == false ? (
                         <div>
                             <p>No hay imagen</p>
                             <input
                                 onChange={(e) => { updateFile(e) }}
                                 name="upload-image"
-                                className="bg-organic text-gray-900 py-2 md:text-xl xs:text-base font-medium my-1 mt-2 focus:outline-none"
+                                className="bg-organic text-gray-900 py-2 md:text-xl xs:text-3xl font-medium my-1 mt-2 focus:outline-none"
                                 type="file" />
 
                         </div>
 
                     )
                         :
-                        (<div>
-                            <img className="w-full rounded-lg" src={imagen} alt="imagen-2" />
-                        </div>
-                        )
-                }
-                {
-                    newImagen == true ? (
-                        <div>
-                        </div>
-
-                    )
-                        :
-                        (<div>
-                            {/* <img className="w-full" src={newImagen} alt="imagen-nueva" /> */}
-                            <input
-                                onChange={(e) => { updateFile(e) }}
-                                name="upload-image"
-                                className="bg-organic text-gray-900 py-2 md:text-xl xs:text-base font-medium my-1 mt-2 focus:outline-none"
-                                type="file" />
-                        </div>
+                        (
+                            <div>
+                                <img className="w-full rounded-xl" src={imagen} alt="imagen-2" />
+                                <input
+                                    onChange={(e) => { updateFile(e) }}
+                                    name="upload-image"
+                                    className="bg-organic text-gray-900 py-2 md:text-xl xs:text-3xl font-medium my-1 mt-2 focus:outline-none"
+                                    type="file" />
+                            </div>
                         )
                 }
                 {

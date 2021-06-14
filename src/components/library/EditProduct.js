@@ -30,7 +30,9 @@ const Product = () => {
     const [product, setProduct] = useState([])
 
     const [imagen, setImagen] = useState('');
-    const [nombre, setNombre] = useState('');
+    const [imagenStatus, setImagenStatus] = useState(null);
+
+    const [nombre, setNombre] = useState(''); 
     const [nombreCientifico, setNombreCientifico] = useState('');
     const [descripcion, setDescripcion] = useState('');
     const [uso, setUso] = useState('');
@@ -42,7 +44,6 @@ const Product = () => {
 
     const [precio, setPrecio] = useState('');
 
-    const [newImagen, setNewImagen] = useState('');
 
     const [loadImg, setLoadImg] = useState('');
 
@@ -102,6 +103,7 @@ const Product = () => {
 
         if (!imagen.trim()) {
             setError('No tiene imagen')
+            setImagenStatus(true)
         }
         if (!nombre.trim()) {
             setError('No tiene nombre')
@@ -181,7 +183,7 @@ const Product = () => {
                 upload.snapshot.ref
                     .getDownloadURL()
                     .then(url => {
-                        setNewImagen(url)
+                        setImagen(url)
                         sessionStorage.setItem('imgNewPost', url)
                     })
                     .catch(err => {
@@ -196,10 +198,10 @@ const Product = () => {
     return (
         <form onSubmit={setUpdate} className="w-1/2 container mx-auto flex justify-center items-center flex-col mt-8 text-gray-800">
 
-
+            {/* EDITAR IMAGEN */}
             <div className="w-full md:p-10 xs:p-0">
                 {
-                    imagen == '' ? (
+                    imagenStatus == false ? (
                         <div>
                             <p>No hay imagen</p>
                             <input
@@ -212,20 +214,9 @@ const Product = () => {
 
                     )
                         :
-                        (<div>
-                            <img className="w-full" src={imagen} alt="imagen-2" />
-                        </div>
-                        )
-                }
-                {
-                    newImagen == '' ? (
+                        (
                         <div>
-                        </div>
-
-                    )
-                        :
-                        (<div>
-                            <img className="w-full" src={newImagen} alt="imagen-nueva" />
+                            <img className="w-full rounded-xl" src={imagen} alt="imagen-2" />
                             <input
                                 onChange={(e) => { updateFile(e) }}
                                 name="upload-image"
@@ -243,6 +234,7 @@ const Product = () => {
                 }
             </div>
 
+            {/* EDITAR DATOS PRINCIPALES */}
             <div className="w-full md:px-10 xs:px-0">
                 <div>
                     <input
@@ -272,6 +264,7 @@ const Product = () => {
 
                 <div className="w-full flex justify-around mt-3 gap-5 flex-col">
 
+                    {/* DATOS SOL EDITAR */}
                     <div className="w-full flex justify-around items-center bg-brand bg-opacity-10 rounded-md py-5">
                         <div className="w-1/4 flex justify-center items-center">
                             <img
@@ -290,6 +283,7 @@ const Product = () => {
                         </div>
                     </div>
 
+                    {/* DATOS AGUA EDITAR */}
                     <div className="w-full flex justify-around items-center bg-brand bg-opacity-10 rounded-md py-5">
                         <div className="w-1/4 flex justify-center items-center">
                             <img
@@ -308,6 +302,7 @@ const Product = () => {
                         </div>
                     </div>
 
+                    {/* DATOS TEMPERATURA EDITAR */}
                     <div className="w-full flex justify-around items-center bg-brand bg-opacity-10 rounded-md py-5">
                         <div className="w-1/4 flex justify-center items-center">
                             <img
@@ -328,87 +323,7 @@ const Product = () => {
 
                 </div>
 
-                <div className="flex justify-center items-center gap-5">
-
-                    <div className="md:w-1/2 xs:w-full">
-                        <Listbox value={category} onChange={setCategory}>
-                            {({ open }) => (
-                                <>
-                                    <div className="relative mt-4">
-                                        <Listbox.Button className="relative w-full py-3 pl-3 pr-10 text-left bg-leave rounded-lg shadow-md text-brand font-medium text-xl focus:outline-none">
-                                            <span className="block truncate">{category.name}</span>
-                                            <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                                                <SelectorIcon
-                                                    className="w-6 h-5 text-brand"
-                                                    aria-hidden="true"
-                                                />
-                                            </span>
-                                        </Listbox.Button>
-                                        <Transition
-                                            show={open}
-                                            as={Fragment}
-                                            leave="transition ease-in duration-100"
-                                            leaveFrom="opacity-100"
-                                            leaveTo="opacity-0"
-                                        >
-                                            <Listbox.Options
-                                                static
-                                                className="absolute w-full py-1 mt-1 overflow-auto text-lg bg-organic rounded-lg shadow-lg max-h-60  cursor-pointer"
-                                            >
-                                                {categorias.map((categoria) => (
-                                                    <Listbox.Option
-                                                        key={categoria.id}
-                                                        value={categoria}
-                                                        disabled={categoria.unavailable}
-                                                        className={({ active }) =>
-                                                            `${active
-                                                                ? "text-brand bg-eco"
-                                                                : "text-gray-800"
-                                                            }
-                                            select none relative py-2 pl-10 pr-4`
-                                                        }
-                                                    >
-                                                        {({ selected, active }) => (
-                                                            <>
-                                                                <span className={`${selected ? "font-medium" : "font-normal"
-                                                                    } block truncate`}>
-                                                                    {categoria.name}
-                                                                </span>
-                                                                {selected ? (
-                                                                    <span
-                                                                        className={`${active ? "text-amber-600" : "text-amber-600"
-                                                                            }
-                                                                absolute inset-y-0 left-0 flex items-center pl-3`}
-                                                                    >
-                                                                        <CheckIcon
-                                                                            className="w-5 h-5"
-                                                                            aria-hidden="true"
-                                                                        />
-                                                                    </span>
-                                                                ) : null}
-                                                            </>
-                                                        )}
-                                                    </Listbox.Option>
-                                                ))}
-                                            </Listbox.Options>
-                                        </Transition>
-                                    </div>
-                                </>
-                            )}
-                        </Listbox>
-                    </div>
-
-                    <div className="md:w-1/2 xs:w-full flex justify-center items-center text-center gap-2 mt-5">
-                        <input
-                            value={precio}
-                            onChange={(e) => { setPrecio(e.target.value) }}
-                            className="w-full bg-transparent border-2 border-brand text-brand p-3 text-xl rounded-lg text-center placeholder-brand focus:outline-none"
-                            placeholder="Precio"
-                        />
-                    </div>
-
-                </div>
-
+                {/* CONFIRMACION SET DATA */}
                 <div className="w-full flex justify-center items-center mt-5">
                     <div class="flex justify-center items-center w-full mt-10 m-3">
                         <Link to="/stock" class="w-full text-center bg-transparent border-2 border-brand text-brand text-semibold my-4 p-3 rounded-2xl md:text-2xl xs:text-2xl focus:outline-none">Cancelar</Link>
