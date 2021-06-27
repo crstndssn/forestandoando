@@ -10,7 +10,7 @@ const Posts = () => {
     useEffect(() => {
 
         const getPost = async () => {
-            const { docs } = await store.collection('posts').get()
+            const { docs } = await store.collection('posts').limit(3).get()
             const newArray = docs.map(item => ({ id: item.id, ...item.data() }))
             setPostUser(newArray)
             console.log(postUser)

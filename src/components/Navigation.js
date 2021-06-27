@@ -66,11 +66,11 @@ const Navigation = () => {
             <div className="w-1/3 cursor-pointer">
                 <Link to="/"><img className="md:w-16 xs:w-12" src={logoDesktop} alt="Logo" /> </Link>
             </div>
-            <div className="lg:w-1/3 md:w-2/3 flex justify-end items-center">
-                <div className="w-3/5 xs:hidden md:flex justify-around items-center mr-3">
-                    <Link to="/blog" className="flex justify-start items-center text-gray-800 hover:text-brand transition duration-200">
+            <div className="lg:w-2/4 md:w-full flex justify-end items-center">
+                <div className="w-2/4 xs:hidden md:flex justify-around items-center mr-3">
+                    <Link to="/contenido" className="flex justify-start items-center text-gray-800 hover:text-brand transition duration-200">
                         <BookOpenIcon className="w-6 mr-1" />
-                        <p className="text-xl text-medium">Blog</p>
+                        <p className="text-xl text-medium">Contenido</p>
                     </Link>
                     <Link to="/biblioteca" className="flex justify-start items-center text-gray-800 hover:text-brand transition duration-200">
                         <LibraryIcon className="w-6 mr-1" />
@@ -144,7 +144,7 @@ const Navigation = () => {
                                                     <Menu.Item>
                                                         {({ active }) => (
                                                             <Link
-                                                                to="/blog"
+                                                                to="/contenido"
                                                                 className={classNames(
                                                                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                                                     'xs:block md:hidden px-4 py-2 m-1 text-sm rounded-full'
@@ -180,7 +180,7 @@ const Navigation = () => {
                                                             <Menu.Item>
                                                                 {({ active }) => (
                                                                     <Link
-                                                                        to="/settings/blog"
+                                                                        to="/settings/contenido"
                                                                         className={classNames(
                                                                             active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                                                             'block px-4 py-2 m-1 text-sm rounded-full'

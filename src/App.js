@@ -12,11 +12,11 @@ import Admin from './components/admin/Admin'
 
 import Home from './views/Home';
 
-import Post from './components/blog/Post';
-import AddPost from './components/blog/AddPost';
-import EditPost from './components/blog/EditPost';
-import Blog from './components/blog/Blog';
-import AdminBlog from './components/blog/AdminBlog'
+import Post from './components/contenido/Post';
+import AddPost from './components/contenido/AddPost';
+import EditPost from './components/contenido/EditPost';
+import Contenido from './components/contenido/Blog';
+import AdminBlog from './components/contenido/AdminBlog'
 
 import Account from './components/admin/Account';
 
@@ -64,7 +64,7 @@ export default class App extends Component {
             <Route path="/settings/add-post" component={AddPost} />
             <Route path="/settings/add-product" component={AddProduct} />
             <Route path="/settings/biblioteca" component={Stock} />
-            <Route path="/settings/blog" component={AdminBlog} />
+            <Route path="/settings/contenido" component={AdminBlog} />
 
             {/* library */}
             <Route path="/product/:id" component={Product}/>
@@ -75,7 +75,7 @@ export default class App extends Component {
             {/* blog */}
             <Route path="/post/:id" component={Post}/>
             <Route path="/settings/edit-post/:id" component={EditPost}/>
-            <Route path="/blog" component={Blog} />
+            <Route path="/contenido" component={Contenido} />
 
             {/* account */}
             <Route path="/account" component={Account} />
