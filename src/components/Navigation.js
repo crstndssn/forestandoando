@@ -68,9 +68,9 @@ const Navigation = () => {
             </div>
             <div className="lg:w-2/4 md:w-full flex justify-end items-center">
                 <div className="w-2/4 xs:hidden md:flex justify-around items-center mr-3">
-                    <Link to="/contenido" className="flex justify-start items-center text-gray-800 hover:text-brand transition duration-200">
+                    <Link to="/blog" className="flex justify-start items-center text-gray-800 hover:text-brand transition duration-200">
                         <BookOpenIcon className="w-6 mr-1" />
-                        <p className="text-xl text-medium">Contenido</p>
+                        <p className="text-xl text-medium">Blog</p>
                     </Link>
                     <Link to="/biblioteca" className="flex justify-start items-center text-gray-800 hover:text-brand transition duration-200">
                         <LibraryIcon className="w-6 mr-1" />
@@ -79,12 +79,12 @@ const Navigation = () => {
                 </div>
                 <div className="xs:w-full md:w-auto flex justify-end items-center">
                     {
-                        !user ? (
+                        // !user ? (
 
-                            <div className="md:w-1/2 xs:w-auto flex justify-end items-center">
-                                <Link className="xs:text-lg md:text-xl text-white border bg-brand hover:bg-transparent border-brand hover:text-brand transition duration-200 px-4 py-1 rounded-full" to="/login">Ingresar</Link>
-                            </div>
-                        ) : (
+                        //     <div className="md:w-1/2 xs:w-auto flex justify-end items-center">
+                        //         <Link className="xs:text-lg md:text-xl text-white border bg-brand hover:bg-transparent border-brand hover:text-brand transition duration-200 px-4 py-1 rounded-full" to="/login">Inicio sesion</Link>
+                        //     </div>
+                        // ) : (
                             <Menu as="div" className="relative inline-block text-left">
                                 {({ open }) => (
                                     <>
@@ -93,7 +93,7 @@ const Navigation = () => {
                                                 <div className="flex justify-start items-center">
                                                     {
                                                         !photo == true ? (
-                                                            <UserIcon className="md:w-5 xs:w-10 mx-2" />
+                                                            <UserIcon className="md:w-5 xs:w-5 mx-2" />
                                                         ) : (
                                                             <img className="w-7 rounded-full mr-2" src={photo} alt="photo" />
                                                         )
@@ -103,7 +103,7 @@ const Navigation = () => {
 
                                                 <div className="flex justify-center items-center ml-1 mr-2">
                                                     <p>Menú</p>
-                                                    <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
+                                                    <ChevronDownIcon className="-mr-1 ml-2 h-5 md:w-5 xs:w-5" aria-hidden="true" />
                                                 </div>
 
                                             </Menu.Button>
@@ -144,7 +144,7 @@ const Navigation = () => {
                                                     <Menu.Item>
                                                         {({ active }) => (
                                                             <Link
-                                                                to="/contenido"
+                                                                to="/blog"
                                                                 className={classNames(
                                                                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                                                     'xs:block md:hidden px-4 py-2 m-1 text-sm rounded-full'
@@ -180,7 +180,7 @@ const Navigation = () => {
                                                             <Menu.Item>
                                                                 {({ active }) => (
                                                                     <Link
-                                                                        to="/settings/contenido"
+                                                                        to="/settings/blog"
                                                                         className={classNames(
                                                                             active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                                                             'block px-4 py-2 m-1 text-sm rounded-full'
@@ -224,7 +224,7 @@ const Navigation = () => {
                                                         )
                                                     }
 
-                                                    <Menu.Item>
+                                                    {/* <Menu.Item>
                                                         {({ active }) => (
                                                             <button
                                                                 onClick={logOut}
@@ -240,7 +240,7 @@ const Navigation = () => {
                                                                 </div>
                                                             </button>
                                                         )}
-                                                    </Menu.Item>
+                                                    </Menu.Item> */}
 
                                                 </div>
                                             </Menu.Items>
@@ -248,7 +248,7 @@ const Navigation = () => {
                                     </>
                                 )}
                             </Menu>
-                        )
+                        // )
                     }
 
                 </div>

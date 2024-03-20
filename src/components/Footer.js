@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import Instagram from '../resources/instagram.svg'
+// import Instagram from '../resources/instagram.svg'
 
 export default class Footer extends Component {
     render() {
         return (
             <div className="container mx-auto min-h-20 w-full  mt-20 mb-10">
                 <div className="flex justify-center items-center xs:flex-col md:flex-row" >
-                    <a target="_blank" href="https://www.instagram.com/forestandoando/" className="flex justify-center items-center text-brand md:text-2xl xs:text-xl mb-7">
+                    {/* <a target="_blank" href="https://www.instagram.com/forestandoando/" className="flex justify-center items-center text-brand md:text-2xl xs:text-xl mb-7">
                         <img src={Instagram} alt="instagram" className="md:w-6 xs:w-5 text-brand mx-1" />
                         Instagram
-                    </a>
+                    </a> */}
                 </div>
                 <div className="flex justify-between items-center md:flex-row xs:flex-col">
                     {/* <div className="flex justify-center items-center xs:flex-col md:flex-row" >

@@ -14,30 +14,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <!-- Primary Meta Tags -->
-  <title>Forestando Ando</title>
-  <meta name="title" content="Forestando Ando">
-  <meta name="description"
-    content="Siembra vida y aprende de la naturaleza.">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://forestandoando.com/">
-  <meta property="og:title" content="Forestando Ando">
-  <meta property="og:description"
-    content="Siembra vida y aprende de la naturaleza.">
-  <meta property="og:image"
-    content="https://forestandoando.com/forestandoando.png">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://forestandoando.com/">
-  <meta property="twitter:title" content="Forestando Ando">
-  <meta property="twitter:description"
-    content="Siembra vida y aprende de la naturaleza.">
-  <meta property="twitter:image"
-    content="https://forestandoando.com/forestandoando.png">
+  
 </head>
 
 <body>
@@ -53,6 +30,25 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+
+    <script>
+      (function(d,t) {
+        var BASE_URL="https://app.chatwoot.com";
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=BASE_URL+"/packs/js/sdk.js";
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g,s);
+        g.onload=function(){
+          window.chatwootSDK.run({
+            websiteToken: 'YyP2jCMwQ6CYB2szWL4cq2f5',
+            baseUrl: BASE_URL
+          })
+        }
+      })(document,"script");
+    </script>
+    
 </body>
 
 </html>

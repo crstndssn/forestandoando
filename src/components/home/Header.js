@@ -17,7 +17,7 @@ const Header = () => {
                 <img src={img3} className="max-h-screen" alt="orquídeas" />
             </div>
             
-            <div className="container mx-auto relative md:w-2/4 xs:w-3/4 min-h-90 flex md:justify-center xs:justify-start xs:top-32 md:top-0 items-center flex-col text-center">
+            <div className="container mx-auto relative md:w-2/4 xs:w-3/4 min-h-90 flex md:justify-center xs:justify-start xs:top-40 md:top-0 items-center flex-col text-center">
                 <h1 className="md:text-8xl xs:text-4xl font-medium"><span className="text-nature">forestando</span><span className="text-ando">ando</span></h1>
                 <p className="text-brand md:text-3xl xs:text-xl">Siembra vida y aprende de la naturaleza.</p>
                 <div className="mt-7">
